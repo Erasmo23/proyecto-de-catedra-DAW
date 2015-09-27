@@ -50,8 +50,57 @@
 	</header><!--fin del menu-->
 	<!--Inicio del contenido de la pagina -->
 	<div class="container " id="cuerpo">
-
-
+		<!--Formulario de contacto
+		Clase form-control para elementos como imput, select, textarea -->
+		<form action="mailto:stvnavalos@gmail.com" id="contactos"  enctype="text/plain" >
+            <h1>Contactenos:</h1>
+                <p class="encabezado">Llenar el siguiente formulario para dudas, sugerencias y ayuda: </p>
+                    <table>
+                    	<div class="form-group"> <!--grupo de nombre completo y su label-->
+                        <tr>
+                            <td colspan="2">Nombre completo:<br>
+                            <input class="form-control" name="nombre" type="text" size="20" maxlenght="80" required pattern="^[a-zA-Z\s]+$" required title="Por favor ingrese sus nombres completo" placeholder="Nombre y Apellido">                           
+                        </tr>
+                        </div>
+                        <div class="form-group"><!--grupo de Correo Electronico-->
+                        <tr>
+                            <td colspan="2">Correo Electronico: <br><input class="form-control" type="email" name="email" required title=" Formato de correo:preferencia@servidor.com" placeholder="ejemplo@dominio.com"/></td>                          
+                        </tr>
+                        </div>
+                        <div class="form-group"><!--grupo de Numero de telefono-->
+                        <tr>
+                            <td colspan="2">Número de telefono: <br><input class="form-control" maxlenght="9" type="tel" name="telefono" title="Ingrese un formato valido:2222-2222" pattern="^[0-9]{4}-?[0-9]{4}$" required placeholder="formato: 2222-2222"/> </td>                          
+                        </tr>
+                        </div>
+                        <div class="form-group"><!--grupo de motivo del contacto-->
+                        <tr>
+                            <td colspan="2">Motivo de contacto: <br><input class="form-control" type="text" list="motivo" required title="Deseamos conocer tu opinion">
+                    		<datalist id="motivo">
+                        		<option value="Felicitacion">Felicitacion</option>
+		                        <option value="Queja">Queja</option>
+		                        <option value="Sugerencia">Sugerencia</option>
+		                    </datalist> 
+		                    </td>                          
+                        </tr>
+                        </div>
+                        <div class="form-group"><!--grupo de comentario personal-->
+                        <tr>
+                            <td colspan="2">Comentario: <br><textarea class="form-control" id="coment" name="comentario" cols="40" rows="6" required title="deseamos conocer tu opinion"></textarea></td>                          
+                        </tr>
+                        </div>
+                        <div class="form-group"><!--grupo de respuesta-->
+                        <tr>
+                            <td colspan="2">Desea respuesta:<br><input name="respuesta" type="radio" value="si" checked>Si<br><input name="respuesta" type="radio" value="no">No</td></td>
+                        </tr>
+                        </div>
+                        <div class="form-group"><!--grupo de botones-->
+                        <tr id="boton">
+                            <td><input type="submit" value="Enviar" class="form-control"></td>
+                            <td><input type="reset" value="Restaurar" class="form-control">  </td>
+                        </tr>
+                        </div>
+                    </table>
+            </form>	<br>
 	</div><br>
 	<!--footer de plantilla de todas las paginas-->
 	<footer class="container-fluid">
