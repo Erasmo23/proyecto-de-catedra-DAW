@@ -26,7 +26,11 @@ body{
 <<<<<<< HEAD
 =======
 =======
+<<<<<<< HEAD
+>>>>>>> gh-pages
+=======
 >>>>>>> origin/gh-pages
+>>>>>>> gh-pages
 /*Estilo para formulario de contactos */
 #contactos table{
     width:60%;
@@ -49,7 +53,11 @@ body{
 =======
 =======
 >>>>>>> origin/gh-pages
+<<<<<<< HEAD
+>>>>>>> gh-pages
+=======
 >>>>>>> origin/gh-pages
+>>>>>>> gh-pages
 footer{
     margin-top: -10px;
     height: 115px;    
@@ -371,6 +379,8 @@ ul li{
     -o-transition: all 0.75s linear;
     transition: all 0.75s linear;
     }
+
+    
     #contactos table{width: 80%;}
 }
 
