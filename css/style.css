@@ -22,7 +22,12 @@ body{
     moz-box-shadow: -10px 10px 15px #888888, 10px 10px 15px #888888;
     border-radius: 1%;
 }
+<<<<<<< HEAD
+
+/*Estilo para el formulario de contactos */
+=======
 /*Estilo para formulario de contactos */
+>>>>>>> master
 #contactos table{
     width:60%;
     padding: 1%;
