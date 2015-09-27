@@ -22,6 +22,11 @@ body{
     moz-box-shadow: -10px 10px 15px #888888, 10px 10px 15px #888888;
     border-radius: 1%;
 }
+<<<<<<< HEAD
+=======
+/*Estilo para el formulario de contactos */
+/*Estilo para formulario de contactos */
+>>>>>>> master
 #contactos table{
     width:60%;
     padding: 1%;
@@ -33,7 +38,6 @@ body{
     -webkit-box-shadow: -10px 10px 15px #888888, 10px 10px 15px #888888;
 }
 #contactos td{
-    
     padding: 15px;
     font-size: 16px;
 }
@@ -120,14 +124,12 @@ ul li{
 .entrada{
     width: 100%;
 }
-
 /*contenedor animado y con trasicion*/
 #slider-box {
     -moz-animation: autoSlider 15s infinite linear;
     -o-animation: autoSlider 15s infinite linear;
     -webkit-animation: autoSlider 15s infinite linear;
     animation: autoSlider 15s infinite linear;
-
     -webkit-transition: all 0.75s linear;
     -moz-transition: all 0.75s linear;
     -ms-transition: all 0.75s linear;
@@ -230,7 +232,6 @@ ul li{
     cursor:pointer;
     opacity:0;
 }
-
 .boton:nth-child(1){
     left:30px;
 }
@@ -246,7 +247,6 @@ ul li{
 .boton:nth-child(9){
     left:150px;
 }
-
 .slider label{
     position:absolute;
     bottom:30px;
@@ -257,9 +257,6 @@ ul li{
     z-index:100;
     border: 1px solid #777;
 }
-
-
-
 .slider label:nth-child(2){
     left:30px;
 }
@@ -285,11 +282,9 @@ ul li{
     display: block;
     float: left;
 }
-
 .cinco-imagenes {
     width: 500%;
 }
-
 .cinco-imagenes img {
     width: 20%;
 }
@@ -340,7 +335,6 @@ ul li{
         overflow:hidden;
         border-radius: 2%;  
     }
-
     /*ocultando los botones*/
     label{display: none;}
     input[type=radio]{display: none;}
@@ -351,15 +345,12 @@ ul li{
     -o-animation: autoSlider 12s infinite linear;
     -webkit-animation: autoSlider 12s infinite linear;
     animation: autoSlider 12s infinite linear;
-
     -webkit-transition: all 0.75s linear;
     -moz-transition: all 0.75s linear;
     -ms-transition: all 0.75s linear;
     -o-transition: all 0.75s linear;
     transition: all 0.75s linear;
     }
-
-    
     #contactos table{width: 80%;}
 }
 
