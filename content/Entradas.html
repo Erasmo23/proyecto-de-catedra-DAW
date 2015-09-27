@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+	<!--Modelo de plantilla a ocupar-->
+	<img src="../img/header.jpg" class="img-responsive" id="logo"><!--Logo del restaurante-->
+	<header class="container-fluid"><!--Menu de toda la pagina-->
+		<section class="row">
+			<article class="cls-lg-12">
+				<nav class="navbar navbar-default navbar-fixed-top navbar-inverse"><!-- indicando por medio de la clase navbar-fixed-top que el menu siempre permanecera en la parte de arriba-->
+					<ul class="nav nav-pills  nav-justified">
+					<div class="navbar-header"><!--Creando el icono para dispositivos smarphone en el menu-->
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuprincipal">
+							<span class="sr-only">Menu</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="../index.html" class="navbar-brand">Le Bernardin</a><!-- titulo del restaurante en el menu-->
+					</div>
+					<div class="collapse navbar-collapse nav-justified" id="menuprincipal"><!--Menu que se mostrara-->
+						<ul class="nav navbar-nav ">
+							<li role="presentation"><a href="../index.html">Home</a></li><!--Clase active para mostrar que ahi en esa pagina estamos-->
+							<li role="presentation" class="dropdown"><a href="Menu.html" class="dropdown-toggle" data-toggle="dropdown" role="button">Menu del restaurante <span class="caret"></span></a>
+								<ul class="dropdown-menu" id="submenu"><!-- Sub menu del menu del restaurante-->
+									<li role="presentation"><a href="Entradas.html">Entradas</a></li>
+									<li class="divider"></li>
+									<li role="presentation"><a href="index.html">Pricipal</a></li>
+									<li class="divider"></li>
+									<li role="presentation"><a href="Postres.html">Postres</a></li>
+									<li class="divider"></li>
+								</ul>
+							</li>							
+							<li role="presentation" class="active"><a>Instalaciones</a></li>
+							<li role="presentation"><a href="reserva.html">Reserva</a></li>
+							<li role="presentation"><a href="contactos.html">Contactos</a></li>
+							<li role="presentation"><a href="creadores.html">Creadores</a></li>
+						</ul>
+					</div>
+				</ul>		
+				</nav>
+			</article>
+		</section>
+	</header><!--fin del menu-->
+	<!--Inicio del contenido de la pagina -->
+	<div class="container " id="cuerpo">
+	<h2  class="text-center text-success">Entradas</h3>
+	<section class="row">
+	<article class="ol-xs-12  col-sm-6  col-md-6  col-lg-8">
+	<img src="../img/entrada1.jpg" class="img-responsive entrada">
+	</article>
+	<article class="ol-xs-12  col-sm-6  col-md-6  col-lg-4">
+	<h3 class="text-left text-primary">almejas marinadas:</h3>
+	<p>Ingredientes de la entrad de almejas a la marinera</p>
+	<ol>
+		<li>1 kg de almejas </li>
+		<li>1 cebolleta </li>
+		<li>2 dientes de ajo </li>
+		<li>1 cucharada de harina </li>
+		<li>1 vaso de vino blanco</li>
+		<li>aceite de oliva virgen extra </li>
+		<li>perejil picado</li>
+	</ol>
+	</article>
+	</section>
+	<section class="row">
+		<article class="ol-xs-12  col-sm-6  col-md-6  col-lg-8">
+		<img src="../img/entrada2.jpg" class="img-responsive entrada">
+		</article>
+		<article class="ol-xs-12  col-sm-6  col-md-6  col-lg-4">
+		<h3 class="text-left text-primary">Langostinas:</h3>
+		<p>Ingredientes de la entrada de Langostinas</p>
+		<ol>
+			<li>250 gr. de Langostinos precocidos pelados y limpios</li>
+			<li>1 cda. de manteca</li>
+			<li>2 cdas. de Aceite de oliva</li>
+			<li>Ají molido</li>
+			<li>Sal</li>
+			<li> Pimienta recién molida</li>
+		</ol>
+		</article>
+	</section>
+	<section class="row">
+		<article class="ol-xs-12  col-sm-6  col-md-6  col-lg-8">
+		<img src="../img/entrada3.jpg" class="img-responsive entrada">
+		</article>
+		<article class="ol-xs-12  col-sm-6  col-md-6  col-lg-4">
+		<h3 class="text-left text-primary">Entrada de Atun:</h3>
+		<p>Ingredientes de entrada de Atun</p>
+		<ol>
+			<li>2 Unidades de Huevos</li>
+			<li>1 Lata de Atún al natural</li>
+			<li>1 Pizca de Perejil</li>
+			<li>1 Unidades de Cebolleta o chalote</li>
+			<li>1 Lata de Crema de leche pequeña</li>
+			<li> 1 Pizca de Sal</li>
+			<li> 1 Pizca de Pimienta</li>
+		</ol>
+		</article>
+	</section>	
+	</div><br>
+	<!--footer de plantilla de todas las paginas-->
+	<footer class="container-fluid">
+        <p>© Copyright 2015 | Alumnos de la UDB/ Proyecto de Catedra | All Rights Reserved. </p>
+        <table id="red">
+            <tr>
+                <td><a><img src="../img/fb.png"></a></td>
+                <td><a><img src="../img/tw.png"></a></td>
+                <td><a><img src="../img/yt.png"></a></td> 
+                <td><a><img src="../img/wa.png"></a></td>  
+                <td><a><img src="../img/yahoo.png"></a></td>                 
+            </tr>
+        </table>
+    </footer>
+    <!--Script que son usados para obtener las funcionalidad que nos ofrece Boostrap-->
+     <script src="http://code.jquery.com/jquery-latest.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
