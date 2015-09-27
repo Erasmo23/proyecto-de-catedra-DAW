@@ -1,0 +1,396 @@
+body{
+	background-color: rgb(224,224,224);
+    padding-top: 51px;
+    font-family: ,'Times','arial','verdana';
+    font-size: 12pt;
+}
+#headr{
+	background-color: #754B0D;
+	color: white;
+}
+
+#banner{
+	margin-bottom:1%;
+}
+#cuerpo{
+	padding: 2%;
+	background-color: white;
+    width: 90%;
+    height: auto;
+    margin: 5px auto;
+    box-shadow: -10px 10px 15px #888888, 10px 10px 15px #888888;
+    -webkit-box-shadow: -10px 10px 15px #888888, 10px 10px 15px #888888;
+    moz-box-shadow: -10px 10px 15px #888888, 10px 10px 15px #888888;
+    border-radius: 1%;
+}
+
+footer{
+    margin-top: -10px;
+    height: 115px;    
+    background-color: #754B0D; /*rgb(18,53,105);*/
+
+}
+footer img{
+    width: 100%;
+    height: 200px;
+}
+footer p{
+    font-family: helvetica;
+    font-size: 14pt;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+}
+#red{
+    margin: -25px auto;
+}
+#red td{
+    width: 70px;
+    height: 70px;
+}
+#red img{
+    height: 32px;
+    width: 32px;
+}
+@media (max-width: 640px) {  /*linea del codigo que nos modifica el cuerpo de la pagina*/
+  .container {
+    width: 10%;
+  }
+  #cuerpo{
+    width:100%;
+    box-shadow: none;
+  }
+}
+/*Estilo para el submenu */
+#submenu{background-color: rgb(117,75,13);}
+#submenu li a{color:white;}
+#submenu li a:hover{
+    color: #43877C`;
+}
+.elemento{
+    background-image: url("../img/nav.png") !important;
+    background-attachment: inherit;
+    background-size: 101%;
+    background-position: center;
+    padding: 3%;
+    border-radius: 3%;
+}
+h1{
+    color:#5bc0de;;
+}
+#logo{
+    width: 100%;
+    height: 150px;
+}
+ul li{
+    background-color: #754B0D;
+    color: #003423;
+}
+.info{
+    color: #27167D;
+}
+#bienve-instala{
+    font-size: 16pt;
+    color: #3C0028;
+}
+.parrafo-insta{
+    color: #00322A;
+    font-size: 13pt;
+}
+
+/*estilo del contenido del auto slider*/
+/*contenedor del auto-slider*/
+#slider-container {
+    height: 20%;
+    margin: 2% auto;
+    overflow: hidden !important;
+    width: 90% !important;
+}
+
+/*contenedor animado y con trasicion*/
+#slider-box {
+    -moz-animation: autoSlider 15s infinite linear;
+    -o-animation: autoSlider 15s infinite linear;
+    -webkit-animation: autoSlider 15s infinite linear;
+    animation: autoSlider 15s infinite linear;
+
+    -webkit-transition: all 0.75s linear;
+    -moz-transition: all 0.75s linear;
+    -ms-transition: all 0.75s linear;
+    -o-transition: all 0.75s linear;
+    transition: all 0.75s linear;
+    height: 100%;
+    width: 500% !important;
+}
+/*elementos que contiene el contenedor animado*/
+.element-cinco,.element-cuatro,.element-tres,.element-dos,.element-uno {
+    min-height: 300px;
+    max-height: 100%;
+    width: 100%;
+}
+.element-cinco img,.element-cuatro img,.element-tres img,.element-dos img,.element-uno img{
+    height: 405px;
+    width: 100%;
+    border-radius: 3%;
+}
+/*flotando las imagenes y dividiendo por 4 partes el contenedor animado*/
+.slider-element {
+    float: left;
+    width: 20%;
+}
+/*animacion para realizar efecto de auto-slider*/
+@-webkit-keyframes autoSlider {
+    0% {
+        margin-left: 0;
+    }
+    15%{
+      margin-left: 0;
+    }
+    30% {
+        margin-left: -100%;
+    }
+    40% {
+        margin-left: -100%;
+    }
+    65%{
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+    88%{
+      margin-left: -300%;
+    }
+    100% {
+        margin-left: -300%;
+    }
+}
+
+@-moz-keyframes autoSlider {
+    0% {
+        margin-left: 0;
+    }
+    15%{
+      margin-left: 0;
+    }
+    30% {
+        margin-left: -100%;
+    }
+    40% {
+        margin-left: -100%;
+    }
+    65%{
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+    88%{
+      margin-left: -300%;
+    }
+    100% {
+        margin-left: -300%;
+    }
+}
+/*slider de main*/
+/*caja contenedora del slider*/
+.slider{
+    display:block;
+    position:relative;
+    margin:auto;
+    width:85%;
+    max-width:990px;
+    max-height:380px;
+    overflow:hidden;    
+}
+/*posicionamiento de los botones:*/
+.boton{
+    position:absolute;
+    display:block;
+    bottom:30px;
+    margin:0;
+    padding:0;
+    z-index:999;
+    cursor:pointer;
+    opacity:0;
+}
+
+.boton:nth-child(1){
+    left:30px;
+}
+.boton:nth-child(3){
+    left:60px;
+}
+.boton:nth-child(5){
+    left:90px;
+}
+.boton:nth-child(7){
+    left:120px;
+}
+.boton:nth-child(9){
+    left:150px;
+}
+
+.slider label{
+    position:absolute;
+    bottom:30px;
+    width:12px;
+    height:12px;
+    background: white;
+    border-radius:7px;
+    z-index:100;
+    border: 1px solid #777;
+}
+
+
+
+.slider label:nth-child(2){
+    left:30px;
+}
+.slider label:nth-child(4){
+    left:60px;
+}
+.slider label:nth-child(6){
+    left:90px;
+}
+.slider label:nth-child(8){
+    left:120px;
+}
+.slider label:nth-child(10){
+    left:150px;
+}
+.boton:checked + label{
+    background: #00FFFF;
+    border-color: #B8860B;
+}
+
+/*dimensiones de la caja contenedora*/
+.contenedor-img img {
+    display: block;
+    float: left;
+}
+
+.cinco-imagenes {
+    width: 500%;
+}
+
+.cinco-imagenes img {
+    width: 20%;
+}
+/*contenedoror para movilizacion de imagenes*/
+.contenedor-img {
+    position: relative;
+    left: 0;
+    -webkit-transition: left 1s ease-in;
+    -ms-transition: left 1s ease-in;
+    -moz-transition: left 1s ease-in;
+    -o-transition: left 1s ease-in;
+    transition: left 1s ease-in;
+}
+/*dependiendo de que boton este activo movera una imagen*/
+.boton:nth-child(1):checked ~ .contenedor-img {
+    left: 0;
+}
+
+.boton:nth-child(3):checked ~ .contenedor-img {
+    left: -100%;
+}
+
+.boton:nth-child(5):checked ~ .contenedor-img {
+    left: -200%;
+}
+
+.boton:nth-child(7):checked ~ .contenedor-img {
+    left: -300%;
+}
+.boton:nth-child(9):checked ~ .contenedor-img {
+    left: -400%;
+}
+
+/*adaptaciones para tablet*/
+@media screen and (max-width: 1020px) and (min-width:520px){
+    /*cambiando dimensiones de la caja contenedora*/
+    .cinco-imagenes img {
+    width: 20%;
+    height: 350px;
+    }
+    .slider{
+        display:block;
+        position:relative;
+        margin:auto;
+        width:94%;
+        max-width:990px;
+        max-height:380px;
+        overflow:hidden;
+        border-radius: 2%;  
+    }
+    /*ocultando los botones*/
+    label{display: none;}
+    input[type=radio]{display: none;}
+    /*aplicando estilo de auto-slider*/
+    .contenedor-img {
+    position: relative;
+    -moz-animation: autoSlider 12s infinite linear;
+    -o-animation: autoSlider 12s infinite linear;
+    -webkit-animation: autoSlider 12s infinite linear;
+    animation: autoSlider 12s infinite linear;
+
+    -webkit-transition: all 0.75s linear;
+    -moz-transition: all 0.75s linear;
+    -ms-transition: all 0.75s linear;
+    -o-transition: all 0.75s linear;
+    transition: all 0.75s linear;
+    }
+
+}
+
+/*adaptaciones para celulares multiples*/
+@media screen and (max-width: 519px){
+    #slider-container {
+    height: 18%;
+    margin: 2% auto;
+    overflow: hidden;
+    text-align: left;
+    width: 100%;
+  }
+  .element-cinco,.element-cuatro img,.element-tres img,.element-dos img,.element-uno img{
+      height: 305px !important;
+      width: 100%;
+  }
+    #bienve-instala{
+        font-size: 12pt;
+        color: #3C0028;
+    }
+    /*redimensionando la caja contenedora*/
+    .slider{
+    display:block;
+    position:relative;
+    margin:auto;
+    width:95%;
+    overflow:hidden;
+    border-radius: 2%;  
+    }
+    .cinco-imagenes img {
+    width: 20%;
+    height: 200px;
+    }
+    /*animando la caja contenedora*/
+    .contenedor-img {
+    position: relative;
+    -moz-animation: autoSlider 12s infinite linear;
+    -o-animation: autoSlider 12s infinite linear;
+    -webkit-animation: autoSlider 12s infinite linear;
+    animation: autoSlider 12s infinite linear;
+
+    -webkit-transition: all 0.75s linear;
+    -moz-transition: all 0.75s linear;
+    -ms-transition: all 0.75s linear;
+    -o-transition: all 0.75s linear;
+    transition: all 0.75s linear;
+    }
+    /*ocultando los botones*/
+    label{display: none;}
+    input[type=radio]{display: none;}
+}

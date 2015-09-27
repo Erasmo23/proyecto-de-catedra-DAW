@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Contactos</title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+	<!--Modelo de plantilla a ocupar-->
+	<img src="../img/header.jpg" class="img-responsive" id="logo"><!--Logo del restaurante-->
+	<header class="container-fluid"><!--Menu de toda la pagina-->
+		<section class="row">
+			<article class="cls-lg-12">
+				<nav class="navbar navbar-default navbar-fixed-top navbar-inverse"><!-- indicando por medio de la clase navbar-fixed-top que el menu siempre permanecera en la parte de arriba-->
+					<ul class="nav nav-pills  nav-justified">
+					<div class="navbar-header"><!--Creando el icono para dispositivos smarphone en el menu-->
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuprincipal">
+							<span class="sr-only">Menu</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="../index.html" class="navbar-brand">Le Bernardin</a><!-- titulo del restaurante en el menu-->
+					</div>
+					<div class="collapse navbar-collapse nav-justified" id="menuprincipal"><!--Menu que se mostrara-->
+						<ul class="nav navbar-nav ">
+							<li role="presentation"><a href="../index.html">Home</a></li><!--Clase active para mostrar que ahi en esa pagina estamos-->
+							<li role="presentation" class="dropdown"><a href="Menu.html" class="dropdown-toggle" data-toggle="dropdown" role="button">Menu del restaurante <span class="caret"></span></a>
+								<ul class="dropdown-menu" id="submenu"><!-- Sub menu del menu del restaurante-->
+									<li role="presentation"><a href="Entradas.html">Entradas</a></li>
+									<li class="divider"></li>
+									<li role="presentation"><a href="index.html">Pricipal</a></li>
+									<li class="divider"></li>
+									<li role="presentation"><a href="Postres.html">Postres</a></li>
+									<li class="divider"></li>
+								</ul>
+							</li>							
+							<li role="presentation"><a href="instalaciones.html">Instalaciones</a></li>
+							<li role="presentation"><a href="reserva.html">Reserva</a></li>
+							<li role="presentation" class="active"><a>Contactos</a></li>
+							<li role="presentation"><a href="creadores.html">Creadores</a></li>
+						</ul>
+					</div>
+				</ul>		
+				</nav>
+			</article>
+		</section>
+	</header><!--fin del menu-->
+	<!--Inicio del contenido de la pagina -->
+	<div class="container " id="cuerpo">
+
+
+	</div><br>
+	<!--footer de plantilla de todas las paginas-->
+	<footer class="container-fluid">
+        <p>© Copyright 2015 | Alumnos de la UDB/ Proyecto de Catedra | All Rights Reserved. </p>
+        <table id="red">
+            <tr>
+                <td><a><img src="../img/fb.png"></a></td>
+                <td><a><img src="../img/tw.png"></a></td>
+                <td><a><img src="../img/yt.png"></a></td> 
+                <td><a><img src="../img/wa.png"></a></td>  
+                <td><a><img src="../img/yahoo.png"></a></td>                 
+            </tr>
+        </table>
+    </footer>
+    <!--Script que son usados para obtener las funcionalidad que nos ofrece Boostrap-->
+     <script src="http://code.jquery.com/jquery-latest.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

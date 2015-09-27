@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Le Bernardin</title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+	<!--Modelo de plantilla a ocupar-->
+	<img src="img/header.jpg" class="img-responsive" id="logo"><!--Logo del restaurante-->
+	<header class="container-fluid"><!--Menu de toda la pagina-->
+		<section class="row">
+			<article class="cls-lg-12">
+				<nav class="navbar navbar-default navbar-fixed-top navbar-inverse"><!-- indicando por medio de la clase navbar-fixed-top que el menu siempre permanecera en la parte de arriba-->
+					<ul class="nav nav-pills  nav-justified">
+					<div class="navbar-header"><!--Creando el icono para dispositivos smarphone en el menu-->
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuprincipal">
+							<span class="sr-only">Menu</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand">Le Bernardin</a><!-- titulo del restaurante en el menu-->
+					</div>
+					<div class="collapse navbar-collapse nav-justified" id="menuprincipal"><!--Menu que se mostrara-->
+						<ul class="nav navbar-nav ">
+							<li role="presentation" class="active"><a>Home</a></li><!--Clase active para mostrar que ahi en esa pagina estamos-->
+							<li role="presentation" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Menu del restaurante <span class="caret"></span></a>
+								<ul class="dropdown-menu" id="submenu"><!-- Sub menu del menu del restaurante-->
+									<li role="presentation"><a href="content/Entradas.html">Entradas</a></li>
+									<li class="divider"></li>
+									<li role="presentation"><a href="content/principal.html">Pricipal</a></li>
+									<li class="divider"></li>
+									<li role="presentation"><a href="content/postres.html">Postres</a></li>
+									<li class="divider"></li>
+								</ul>
+							</li>							
+							<li role="presentation"><a href="content/instalaciones.html">Instalaciones</a></li>
+							<li role="presentation"><a href="content/reserva.html">Reserva</a></li>
+							<li role="presentation"><a href="content/contactos.html">Contactos</a></li>
+							<li role="presentation"><a href="content/creadores.html">Creadores</a></li>
+						</ul>
+					</div>
+				</ul>		
+				</nav>
+			</article>
+		</section>
+	</header><!--fin del menu-->
+	<!--Inicio del contenido de la pagina -->
+	<div class="container " id="cuerpo">
+
+		<section class="row" id="banner">
+			<article class="col-xs-12">
+		        <article class="slider">
+		            <input type="radio" class="boton" name="boton" checked="checked">
+		            <label></label>
+		            <input type="radio" class="boton" name="boton">
+		            <label></label>
+		            <input type="radio" class="boton" name="boton">
+		            <label></label>
+		            <input type="radio" class="boton" name="boton">
+		            <label></label>
+		            <input type="radio" class="boton" name="boton">
+		            <label></label> 
+		            <section class="contenedor-img cinco-imagenes">
+		                <img src="img/slider-main1.jpg"/>
+		                <img src="img/slider-main2.jpg"/>
+		                <img src="img/slider-main3.jpg"/>
+		                <img src="img/slider-main4.jpg"/>
+		                <img src="img/slider-main5.jpg"/>
+		            </section>
+		        </article>					
+			</article>			
+		</section>
+
+		<section class="row">
+			<article class="col-xs-12  col-sm-6  col-md-6  col-lg-3 ">
+				<h3 class="info">Bienvenidos</h3>
+				<p class="text-justify elemento">
+					Bienvenido a nuestra familia “Le Bernardin”, esperamos que puedas tener una grata experiencia con nosotros y que tu estancia sea larga ya que ahora eres parte esencial de nosotros.Un lugar donde esperamos se sientan como en su casa mientras disfrutan de nuestra cocina en un ambiente familiar, agradable y acogedor.
+				</p>
+			</article>
+			<article class="col-xs-12  col-sm-6  col-md-6  col-lg-3">
+				<h3 class="info">Dedicación</h3>
+				<p class="text-justify  elemento">
+					En Le Bernardin, nos esforzamos para trabajar y fomentar el mejor talento. La pasión, la dedicación, la profesionalidad y el sentido de comunidad, tanto en la cocina y el frente de la casa son de suma importancia para el éxito con nuestro equipo. Demostrando ser un restaurante de prestigio de clase mundial.
+				</p>
+			</article>
+			<article class="col-xs-12  col-sm-6  col-md-6  col-lg-3">
+				<h3 class="info">Acerca De</h3>
+				<p class="text-justify  elemento">
+					Nacido en París en 1972 por el dúo de hermanos Maguy y Gilbert Le Coze. Le Bernardin obtuvimos cuatro estrellas de The New York Times tres meses después de su apertura, sin haber caído una estrella a lo largo de cinco exámenes, y es el único restaurante para mantener esta calificación para ese periodo de tiempo. 
+				</p>
+			</article>
+			<article class="col-xs-12  col-sm-6  col-md-6  col-lg-3">
+				<h3 class="info">Reconocimientos</h3>
+				<p class="text-justify  elemento">
+					En 2009, Le Bernardin fue votado decimoquinto mejor restaurante del mundo en la revista Top 50.Somos uno de los siete restaurantes en Nueva York concedido tres Michelin estrellas, y somos el restaurante que ha celebrado cuatro estrellas de The New York Times durante el mayor período de tiempo, después de haber ganado el ranking a principios de 1986.
+				</p>
+			</article>
+		</section>
+	</div><br>
+	<!--footer de plantilla de todas las paginas-->
+	<footer class="container-fluid">
+        <p>© Copyright 2015 | Alumnos de la UDB/ Proyecto de Catedra | All Rights Reserved. </p>
+        <table id="red">
+            <tr>
+                <td><a><img src="img/fb.png"></a></td>
+                <td><a><img src="img/tw.png"></a></td>
+                <td><a><img src="img/yt.png"></a></td> 
+                <td><a><img src="img/wa.png"></a></td>  
+                <td><a><img src="img/yahoo.png"></a></td>                 
+            </tr>
+        </table>
+    </footer>
+    <!--Script que son usados para obtener las funcionalidad que nos ofrece Boostrap-->
+     <script src="http://code.jquery.com/jquery-latest.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
