@@ -8,7 +8,6 @@ body{
 	background-color: #754B0D;
 	color: white;
 }
-
 #banner{
 	margin-bottom:1%;
 }
@@ -23,6 +22,8 @@ body{
     moz-box-shadow: -10px 10px 15px #888888, 10px 10px 15px #888888;
     border-radius: 1%;
 }
+<<<<<<< HEAD
+=======
 /*Estilo para formulario de contactos */
 #contactos table{
     width:60%;
@@ -40,11 +41,11 @@ body{
     font-size: 16px;
 }
 
+>>>>>>> master
 footer{
     margin-top: -10px;
     height: 115px;    
-    background-color: #754B0D; /*rgb(18,53,105);*/
-
+    background-color: #754B0D;
 }
 footer img{
     width: 100%;
@@ -113,7 +114,6 @@ ul li{
     color: #00322A;
     font-size: 13pt;
 }
-
 /*estilo del contenido del auto slider*/
 /*contenedor del auto-slider*/
 #slider-container {
@@ -121,6 +121,9 @@ ul li{
     margin: 2% auto;
     overflow: hidden !important;
     width: 90% !important;
+}
+.entrada{
+    width: 100%;
 }
 
 /*contenedor animado y con trasicion*/
