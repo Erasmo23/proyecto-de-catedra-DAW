@@ -23,7 +23,10 @@ body{
     border-radius: 1%;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/gh-pages
 /*Estilo para formulario de contactos */
 #contactos table{
     width:60%;
@@ -41,7 +44,12 @@ body{
     font-size: 16px;
 }
 
+<<<<<<< HEAD
 >>>>>>> master
+=======
+=======
+>>>>>>> origin/gh-pages
+>>>>>>> origin/gh-pages
 footer{
     margin-top: -10px;
     height: 115px;    
@@ -345,6 +353,7 @@ ul li{
         overflow:hidden;
         border-radius: 2%;  
     }
+
     /*ocultando los botones*/
     label{display: none;}
     input[type=radio]{display: none;}
@@ -362,7 +371,7 @@ ul li{
     -o-transition: all 0.75s linear;
     transition: all 0.75s linear;
     }
-
+    #contactos table{width: 80%;}
 }
 
 /*adaptaciones para celulares multiples*/
@@ -412,4 +421,5 @@ ul li{
     /*ocultando los botones*/
     label{display: none;}
     input[type=radio]{display: none;}
+     #contactos table{width: 98%;}
 }
