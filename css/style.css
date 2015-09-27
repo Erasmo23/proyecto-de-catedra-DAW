@@ -213,7 +213,7 @@ ul li{
     display:block;
     position:relative;
     margin:auto;
-    width:85%;
+    width:100% !important;
     max-width:990px;
     max-height:380px;
     overflow:hidden;    
