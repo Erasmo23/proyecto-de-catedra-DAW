@@ -65,7 +65,7 @@ footer p{
 #submenu{background-color: rgb(117,75,13);}
 #submenu li a{color:white;}
 #submenu li a:hover{
-    color: black;
+    color: #43877C;
 }
 .elemento{
     background-image: url("../img/nav.png") !important;
