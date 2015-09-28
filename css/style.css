@@ -434,6 +434,13 @@ ul li{
     }
     /*ocultando los botones*/
     label{display: none;}
-    input[type=radio]{display: none;}
-     #contactos table{width: 98%;}
+    .botones-slider{display: none;}
+    #contactos table{
+        width: 98%;
+    }
+     footer{
+    margin-top: -10px;
+    height: 125px;    
+    background-color: #754B0D;
+}
 }
