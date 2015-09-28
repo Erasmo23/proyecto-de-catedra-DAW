@@ -443,4 +443,11 @@ ul li{
     height: 125px;    
     background-color: #754B0D;
 }
+footer p{
+    font-family: helvetica;
+    font-size: 12pt;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+}
 }
