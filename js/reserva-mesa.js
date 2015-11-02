@@ -137,6 +137,11 @@ function cliente (nom,dui,phone,email){
 		Reserva.Cantidad = document.getElementById("Cantidad-Visitantes").value;
 		Reserva.fecha = document.getElementById("Fecha").value;
 		Reserva.Horario = document.getElementById("horario").value;
+		//se guardara un temporal para mostrarlo posteriormente
+		Reserva=JSON.stringify(Reserva);//pasando a cadena todo los json contenidos en el vector
+ 		localStorage.setItem("TempMostrar", Reserva);//guardando la reserva hecha
+ 		Reserva= JSON.parse(Reserva);//pasando a Json de nuevo para seguir trabajando con el
+
 		Reservas[totalreserva]= Reserva;
 		//Reservas[totalreserva]= JSON.stringify(Reserva);
 		totalreserva++;
@@ -231,6 +236,7 @@ function crear_Reserva (a,b,c,d){
 				guardar();
 				console.log("Se ha completado una reserva");
 				alert("Se ha completado una reserva");
+				location.href="reserva-hecha.html";
 		}else {
 			alert("La disponibilidad de esa mesa ya esta Reserva en el horario y la fecha solicitad");
 		}
