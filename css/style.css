@@ -369,6 +369,34 @@ legend.scheduler-border {
 .error{
     display: none;
 }
+#Datos{
+    margin: 60px auto;
+    background-color: rgb(43,172,243);
+    color: white;
+    font-size: 13pt;
+    text-align: center;
+}
+
+#Datos th{
+    background-color: rgb(18,53,105);
+    padding: 10px;
+    text-align: center;
+    color: #EBD302;
+}
+#Datos td{
+    border:1px solid silver;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+#Datos tr:hover{
+    background-color: silver;
+}
+
+#Datos td,th{
+    border:1px solid;
+    padding: 10px;
+}
 
 
 /*linea del codigo que nos modifica el cuerpo de la pagina*/
