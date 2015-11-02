@@ -8,7 +8,7 @@ body{
 	background-color: #754B0D;
 	color: white;
 }
-#banner{
+#banner{ 
 	margin-bottom:1%;
 }
 #cuerpo{
@@ -65,15 +65,13 @@ footer p{
     height: 32px;
     width: 32px;
 }
-@media (max-width: 640px) {  /*linea del codigo que nos modifica el cuerpo de la pagina*/
-  .container {
-    width: 10%;
-  }
-  #cuerpo{
-    width:100%;
-    box-shadow: none;
-  }
-}
+
+/*modificacion para ordenadores y tablet sobre reserva de mesa*/
+#mesap, #mesam, #mesag{display: block;}
+#peque, #media,#grande{display: none;}
+
+
+
 /*Estilo para el submenu */
 #submenu{background-color: rgb(117,75,13);}
 #submenu li a{color:white;}
@@ -324,7 +322,8 @@ ul li{
     margin-top: 3px;
     margin-left: 185px;
 }
-[required]{
+
+.form-control{
     border-radius: 15px;
     box-shadow: 0px 0px 5px #808080;
 }
@@ -352,8 +351,42 @@ ul li{
     font-family: 'verdana','arial';
     font-size: 12pt;
 }
+fieldset.scheduler-border {
+    border: 1px groove #D2691E !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+    box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    border:none;
+    width:165px;
+}
+.error{
+    display: none;
+}
+
+
+/*linea del codigo que nos modifica el cuerpo de la pagina*/
+@media (max-width: 640px) {  
+  .container {
+    width: 10%;
+  }
+  #cuerpo{
+    width:100%;
+    box-shadow: none;
+  }
+}
+
 /*adaptaciones para tablet*/
 @media screen and (max-width: 1020px) and (min-width:520px){
+    #cuerpo{
+    width:96%;
+  }
     /*cambiando dimensiones de la caja contenedora*/
     .cinco-imagenes img {
     width: 20%;
@@ -386,6 +419,8 @@ ul li{
     transition: all 0.75s linear;
     }
     #contactos table{width: 80%;}
+    #mesap, #mesam, #mesag{display: none;}
+    #peque, #media,#grande{display: block;}
 }
 
 /*adaptaciones para celulares multiples*/
@@ -397,6 +432,7 @@ ul li{
     text-align: left;
     width: 100%;
   }
+
   .element-cinco,.element-cuatro img,.element-tres img,.element-dos img,.element-uno img{
       height: 305px !important;
       width: 100%;
@@ -453,4 +489,8 @@ footer p{
 .form-reserva{
     margin-right: 35%;
 }
+/*modificacion para moviles sobre reserva de mesa*/
+#mesap, #mesam, #mesag{display: none;}
+#peque, #media,#grande{display: block;}
+input[type=radio]{display: none;}
 }
