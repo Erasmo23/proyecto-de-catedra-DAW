@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script type="text/javascript" src="../js/reserva.js"></script>
 </head>
 <body>
 	<!--Modelo de plantilla a ocupar-->
@@ -49,106 +50,119 @@
 	</header><!--fin del menu-->
 	<!--Inicio del contenido de la pagina -->
 	<div class="container " id="cuerpo">
-	<form action="" method="post">
-	<section class="row">
+	<form action="" method="post" name="mesaslocal">
+
+	<!--Modificacion para adaptacion a moviles  mesas peque  -->
+	<section id="peque"><h2 class="text-warning bg-success text-center border">Mesas pequeñas (4 personas).</h2></section>
+
+	<!-- Menu normal en ordenadores y tablets -->
+	<section class="row" id="mesap">
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<br><br><h2 class="text-warning bg-success text-center border">Mesas pequeñas.</h2>
+		<br><br><h2 class="text-warning bg-success text-center border" id="mesapp">Mesas pequeñas.</h2>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/pequeñas.jpg" class="img-responsive border-superior">
+		<img src="../img/pequeñas.jpg" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="1" checked>Mesa # 1:<br> Capacidad maxima:4 personas</p>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/pequeñas.jpg" class="img-responsive border-superior">
+		<img src="../img/pequeñas.jpg" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="2">Mesa # 2:<br> Capacidad maxima:4 personas</p>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/pequeñas.jpg" class="img-responsive border-superior">
+		<img src="../img/pequeñas.jpg" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="3">Mesa # 3:<br> Capacidad maxima:4 personas</p>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/pequeñas.jpg" class="img-responsive border-superior">
+		<img src="../img/pequeñas.jpg" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="4">Mesa # 4:<br> Capacidad maxima:4 personas</p>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/pequeñas.jpg" class="img-responsive border-superior">
+		<img src="../img/pequeñas.jpg" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="5">Mesa # 5:<br> Capacidad maxima:4 personas</p>
 		</article>
 	</section>
-	<section class="row">
+
+	<!--Modificacion para adaptacion a moviles  mesas medianas  -->
+	<section id="media"><h2 class="text-warning bg-success text-center border">Mesas Medianas (6 personas).</h2></section>
+
+	<section class="row" id="mesam">
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<br><br><h2 class="text-warning bg-success text-center border">Mesas Medianadas.</h2>
+		<br><br><h2 class="text-warning bg-success text-center border" id="mesamm">Mesas Medianas.</h2>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/medianas.png" class="img-responsive border-superior">
+		<img src="../img/medianas.png" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="6">Mesa # 6:<br>Capacidad maxima:6 personas</p>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/medianas.png" class="img-responsive border-superior">
+		<img src="../img/medianas.png" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="7">Mesa # 7:<br> Capacidad maxima:6 personas</p>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/medianas.png" class="img-responsive border-superior">
+		<img src="../img/medianas.png" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="8">Mesa # 8:<br> Capacidad maxima:6 personas</p>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/medianas.png" class="img-responsive border-superior">
+		<img src="../img/medianas.png" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="9">Mesa # 9:<br> Capacidad maxima:6 personas</p>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/medianas.png" class="img-responsive border-superior">
+		<img src="../img/medianas.png" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="10">Mesa # 10:<br> Capacidad maxima:6 personas</p>
 		</article>
 	</section>
-		<section class="row">
+
+	<!--Modificacion para adaptacion a moviles  mesas grandes  -->
+	<section id="grande"><h2 class="text-warning bg-success text-center border">Mesas Grandes (10 personas).</h2></section>
+
+		<section class="row" id="mesag">
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<br><br><h2 class="text-warning bg-success text-center border">Mesas Grandes.</h2>
+		<br><br><h2 class="text-warning bg-success text-center border" id="mesagg">Mesas Grandes.</h2>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/grandes.jpg" class="img-responsive border-superior">
+		<img src="../img/grandes.jpg" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="11">Mesa # 11:<br> Capacidad maxima:10 personas</p>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/grandes.jpg" class="img-responsive border-superior">
+		<img src="../img/grandes.jpg" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="12">Mesa # 12:<br> Capacidad maxima:10 personas</p>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/grandes.jpg" class="img-responsive border-superior">
+		<img src="../img/grandes.jpg" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="13">Mesa # 13:<br> Capacidad maxima:10 personas</p>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/grandes.jpg" class="img-responsive border-superior">
+		<img src="../img/grandes.jpg" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="14">Mesa # 14:<br> Capacidad maxima:10 personas</p>
 		</article>
 
 		<article class="col-xs-12 col-sm-6  col-md-6  col-lg-2">
-		<img src="../img/grandes.jpg" class="img-responsive border-superior">
+		<img src="../img/grandes.jpg" class="img-responsive border-superior obtener">
 		<p class="text-center text-danger bg-success border-inferior"><input type="radio" name="mesa" value="15">Mesa # 15:<br> Capacidad maxima:10 personas</p>
 		</article>
 	</section>
 	<section class="row">
-		<article class="col-xs-12 col-sm-3"></article>
+		<article class="col-xs-12 col-sm-3"><a class="btn  btn-lg form-reserva" id="btn-reser">Reservar</a></article>
 		<article class="clearfix visible-xs-block"></article>
 		<article class="col-xs-3 col-sm-3">
-			<a href="reservar-mesa.html" class="btn  btn-lg form-reserva">Reservar</a>
+			
 		</article>
 		<article class="clearfix visible-xs-block"></article>
 		<article class="col-xs-3 col-sm-3">
-			<input type="reset" value="Restaurar" class="form-reserva">
+			<input type="reset" value="Restaurar" class="form-reserva" id="Restart">
 		</article>
 		<article class="col-xs-12 col-sm-3"></article>
 	</section>
