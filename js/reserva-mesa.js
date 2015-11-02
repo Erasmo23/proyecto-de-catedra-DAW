@@ -112,10 +112,9 @@ function Restaurar(){
 		Reservas = new Array();
 	}else{
 		Reservas= JSON.parse(Reservas);
+		console.log(totalreserva);
+		console.log(Reservas);
 	}
-	console.log(totalreserva);
-	console.log(Reservas);
-	console.log(Reservas[0].Nombre);
 }
 
 //clase que contendra los datos de cliente de reserva
