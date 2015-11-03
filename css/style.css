@@ -399,6 +399,36 @@ legend.scheduler-border {
 }
 
 
+#DatosTotales{
+    margin: 60px auto;
+    background-color: rgb(43,172,243);
+    color: white;
+    font-size: 13pt;
+    text-align: center;
+}
+
+#DatosTotales th{
+    background-color: rgb(18,53,105);
+    padding: 10px;
+    text-align: center;
+    color: #EBD302;
+}
+#DatosTotales td{
+    border:1px solid silver;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+#DatosTotales tr:hover{
+    background-color: silver;
+}
+
+#DatosTotales td,th{
+    border:1px solid;
+    padding: 10px;
+}
+
+
 /*linea del codigo que nos modifica el cuerpo de la pagina*/
 @media (max-width: 640px) {  
   .container {
