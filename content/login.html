@@ -5,6 +5,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script type="text/javascript" src="../js/verificar.js"></script>
+	<script type="text/javascript" src="../js/login.js"></script>
 </head>
 <body>
 	<!--Modelo de plantilla a ocupar-->
@@ -36,15 +38,15 @@
 									<li class="divider"></li>
 								</ul>
 							</li>							
-							<li role="presentation" class="active"><a>Instalaciones</a></li>
+							<li role="presentation"><a>Instalaciones</a></li>
 							<li role="presentation"><a href="reserva.html">Reserva</a></li>
 							<li role="presentation"><a href="contactos.html">Contactos</a></li>
 							<li role="presentation"><a href="creadores.html">Creadores</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 					          <li id="esconder"><a href="login.html"><span class="glyphicon glyphicon-log-in" ></span>Login</a></li>
-					          <li id="login"><a href="#"></a></li>
-					          <li><a href="#"><span class="glyphiconglyphicon-user"></span>Salir</a></li>
+					          <li id="login"><a href="#" id="alogin"></a></li>
+					          <li id="salir"><a href="#"><span class="glyphiconglyphicon-user"></span>Salir</a></li>
 					    </ul>
 					</div>
 				</ul>		
@@ -66,7 +68,7 @@
 					</article>
 					<article class="form-group control-group">
 						<p class="text-right text-success diff">Contraseña:</p>
-						<input class="form-control" type="text" value=""  id="contra" name="contra">
+						<input class="form-control" type="password" value=""  id="contralogin" name="contralogin">
 					</article>
 					<input class="bottom btn btn-primary btn-lg" type="button" id="Logearse" value="Logearse">
 				</fieldset>
@@ -99,11 +101,12 @@
 					</article>
 					<article class="form-group control-group"> 
 						<p class="text-right text-success diff">Usuario:</p>
-						<input class="form-control" type="text" name="usuario" id="usuario" value="">
+						<input class="form-control" type="text" name="user" id="user" value="">
+						<span class="error">*Dato erroneo</span>
 					</article>
 					<article class="form-group control-group">
 						<p class="text-right text-success diff">Contraseña:</p>
-						<input class="form-control" type="text" value=""  id="contra" name="contra">
+						<input class="form-control" type="password" value=""  id="contra" name="contra">
 					</article>
 					<input class="bottom btn btn-primary btn-lg" type="button" id="Registrarse" value="Registrarse">
 				</fieldset>
