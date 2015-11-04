@@ -364,7 +364,7 @@ legend.scheduler-border {
     font-weight: bold !important;
     text-align: left !important;
     border:none;
-    width:165px;
+    width:120px;
 }
 .error{
     display: none;
@@ -427,7 +427,8 @@ legend.scheduler-border {
     border:1px solid;
     padding: 10px;
 }
-
+#login{display: none;}
+#Registrarse,#Logearse{margin-left: 45%;}
 
 /*linea del codigo que nos modifica el cuerpo de la pagina*/
 @media (max-width: 640px) {  
@@ -480,6 +481,22 @@ legend.scheduler-border {
     #mesap, #mesam, #mesag{display: none;}
     #peque, #media,#grande{display: block;}
 }
+
+@media screen and (max-width: 967px) and (min-width:833px){
+.navbar-brand{display: none;}
+
+}
+@media screen and (max-width: 882px) and (min-width:776px){
+.navbar-brand{display: none;}
+nav{font-size: 11pt;}
+}
+@media screen and (max-width: 775px) and (min-width:767px){
+.navbar-brand{display: none;}
+nav{font-size: 10pt;}
+}
+
+
+
 
 /*adaptaciones para celulares multiples*/
 @media screen and (max-width: 519px){

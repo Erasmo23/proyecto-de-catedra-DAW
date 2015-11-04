@@ -5,7 +5,6 @@
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<script type="text/javascript" src="../js/reserva-mesa.js"></script>
 </head>
 <body>
 	<!--Modelo de plantilla a ocupar-->
@@ -37,7 +36,7 @@
 									<li class="divider"></li>
 								</ul>
 							</li>							
-							<li role="presentation"><a href="instalaciones.html">Instalaciones</a></li>
+							<li role="presentation" class="active"><a>Instalaciones</a></li>
 							<li role="presentation"><a href="reserva.html">Reserva</a></li>
 							<li role="presentation"><a href="contactos.html">Contactos</a></li>
 							<li role="presentation"><a href="creadores.html">Creadores</a></li>
@@ -54,54 +53,63 @@
 		</section>
 	</header><!--fin del menu-->
 	<!--Inicio del contenido de la pagina -->
-	<div class="container" id="cuerpo">
+	<div class="container " id="cuerpo">
 	<section class="row">
-		<article class="col-xs-12 col-md-6 col-lg-4">
-			<img src="../img/reservacion-de-mesa.jpg" class="img-responsive">
-		</article>
-
-		<article  class="col-xs-12 col-md-6 col-lg-4">
-			<form id="reserva-mesa" name="Reserva-Mesa" class="form-horizontal">
-				<h1 class="text-center text-primary">Reservación de Mesas:</h1>
-				<!--Informacin de la mesa selecionada-->
+	<article class="col-xs-12  col-sm-5  col-md-5  col-lg-5">
+	<form id="logearse" name="Reserva-Mesa" class="form-horizontal">
+		<!--Informacion personal-->
 				<fieldset class="scheduler-border">
-					<legend class="scheduler-border">Datos de Mesa</legend>
-					<article class="form-group">
-						<p class="text-right text-success diff">Tipo de Mesa:</p>
-						<input class="form-control" type="text" value="" disabled id="TipoMesa" name="TipoMesa">
+					<legend class="scheduler-border">Logearse</legend>
+					<article class="form-group control-group"> 
+						<p class="text-right text-success diff">Usuario:</p>
+						<input class="form-control" type="text" name="usuario" id="usuario" value="">
 					</article>
-					<article class="form-group">
-						<p class="text-right text-success diff">Número de Mesa:</p>
-						<input class="form-control" type="text" value="" disabled id="NumeroMesa" name="NumeroMesa">
+					<article class="form-group control-group">
+						<p class="text-right text-success diff">Contraseña:</p>
+						<input class="form-control" type="text" value=""  id="contra" name="contra">
 					</article>
-					<article class="form-group">
-						<p class="text-right text-success diff">Cantidad de comensales:</p>
-						<input class="form-control" type="number" name="Cantidad-Visitantes" min="1" max="10" pattern="^(?:\+|-)?\d+$" id="Cantidad-Visitantes" required step title="Debe de Selecionar una cantidad de comensales" />
-					</article>
-					<article class="form-group">
-						<p class="text-right text-success diff">Fecha de Reservación:</p>
-						<input class="form-control" class="fecha" type="date" name="Fecha" id="Fecha" required title="La fecha de Reservacion debe ser con una semana de anticipación">
-					</article>
-					<article class="form-group">
-						<p class="text-right text-success diff">Horario de reservación:</p>
-						<select class="form-control" name="horario" size="1" id="horario" required>
-							<option name="HorarioReserva" value="1" >11:00 am - 12:30 pm.</option>
-							<option name="HorarioReserva" value="2">12:30 pm - 2:00 pm.</option>
-							<option name="HorarioReserva" value="3">6:00 pm - 7:30 pm.</option>
-							<option name="HorarioReserva" value="4">7:30 pm - 9:00 pm.</option>
-							<option name="HorarioReserva" value="5">9:00 pm - 10:30 pm.</option>
-						</select>
-					</article>
+					<input class="bottom btn btn-primary btn-lg" type="button" id="Logearse" value="Logearse">
 				</fieldset>
-				<input class="bottom btn btn-primary btn-lg" type="button" id="regi" value="Reservar Mesa">
-				<br>
 			</form>
 		</article>
-		<article  class="col-xs-12 col-md-6 col-lg-4">
-		<img src="../img/reservacion-de-mesa2.jpg" class="img-responsive">
-		</article>
-	</section>
-
+		<article class="col-xs-12  col-sm-7  col-md-7  col-lg-7">
+			<form id="registrar" name="Reserva-Mesa" class="form-horizontal">
+				<!--Informacion personal-->
+				<fieldset class="scheduler-border">
+					<legend class="scheduler-border">Registrarse</legend>
+					<article class="form-group control-group"> 
+						<p class="text-right text-success diff">Nombre Completo:</p>
+						<input class="form-control" type="text" name="NomComplet" id="NomComplet" value="">
+						<span class="error">*Dato erroneo</span>
+					</article>
+					<article class="form-group control-group">
+						<p class="text-right text-success diff">DUI:</p>
+						<input class="form-control" type="text" value=""  id="Dui" name="Dui">
+						<span class="error">*Dato erroneo</span>
+					</article>
+					<article class="form-group control-group"> 
+						<p class="text-right text-success diff">Número de telefono:</p>
+						<input class="form-control" type="text" value="" name="NumeroTelefono" id="NumeroTelefono">
+						<span class="error">*Dato erroneo</span>
+					</article>
+					<article class="form-group control-group"> 
+						<p class="text-right text-success diff">Email:</p>
+						<input class="form-control" type="text" name="Correo" id="Correo" value="">
+						<span class="error">*Dato erroneo</span>
+					</article>
+					<article class="form-group control-group"> 
+						<p class="text-right text-success diff">Usuario:</p>
+						<input class="form-control" type="text" name="usuario" id="usuario" value="">
+					</article>
+					<article class="form-group control-group">
+						<p class="text-right text-success diff">Contraseña:</p>
+						<input class="form-control" type="text" value=""  id="contra" name="contra">
+					</article>
+					<input class="bottom btn btn-primary btn-lg" type="button" id="Registrarse" value="Registrarse">
+				</fieldset>
+			</form>
+		</article>	
+		</section>
 	</div><br>
 	<!--footer de plantilla de todas las paginas-->
 	<footer class="container-fluid">
