@@ -95,12 +95,7 @@ function autoAjuste(){
 	document.getElementById("Fecha").value=freserva;
 	document.getElementById("Fecha").min=freserva;
 	var annio = factual.getFullYear();
-	//asignando placeholder en los campos
-	document.getElementById("NomComplet").placeholder="nombres apellidos";
-	document.getElementById("Dui").placeholder="formato 12345678-9";
-	document.getElementById("NumeroTelefono").placeholder="formato 0000-0000";
-	document.getElementById("Correo").placeholder="ejemplo: example@gmail.com";
-	document.getElementById("regi").onclick= function(){validar()};
+	
 }
 function Restaurar(){
 	totalreserva= localStorage.getItem("Total");
@@ -186,45 +181,7 @@ function cliente (nom,dui,phone,email){
 	}//fin de la funcion comprobar
 }//fin de la clase
 
-function validar(){
-	var NC=document.getElementById("NomComplet").value;
-	var D =document.getElementById("Dui").value;
-	var NT=document.getElementById("NumeroTelefono").value;
-	var C=document.getElementById("Correo").value;
-	var errores =document.getElementsByClassName("error");
-	var re = null;
-	//validando el nombre
-	re= /^[A-Za-z]{3,}([\s][A-Za-z]{3,})+$/;
-	if (re.test(NC)){
-		errores[0].style.display="none";//ocultando el span correspondiente
-		re= /^\d{8}-\d{1}$/;
-		if (re.test(D)){
-			errores[1].style.display="none";//ocultando el span correspondiente
-			re=/^\d{4}-\d{4}$/;
-			if (re.test(NT)){
-					errores[2].style.display="none";//ocultando el span correspondiente
-					re=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-					if (re.test(C)){
-							errores[3].style.display="none";//ocultando el span correspondiente
-							//invocamos a la funcion donde instanciaremos un objecto de la clase de cliente
-							crear_Reserva(NC,D,NT,C);
-					}else{
-						errores[3].style.display="block";//mostrando el mensaje que esta en el span
-						errores[3].style.color="red";
-					}//fin de la validacion de correo
-			}else{
-				errores[2].style.display="block";//mostrando el mensaje que esta en el span
-				errores[2].style.color="red";
-			}//fin de la validacion del numero de telefono
-		}else{
-			errores[1].style.display="block";//mostrando el mensaje que esta en el span
-			errores[1].style.color="red";
-		}//fin de validacion de DUI
-	}else{
-		errores[0].style.display="block";//mostrando el mensaje que esta en el span
-		errores[0].style.color="red";
-	}//fin de validacion de nombre
-}//fin de funcion
+
 
 
 function crear_Reserva (a,b,c,d){
@@ -264,10 +221,3 @@ function guardar() {
 	}//fin de funcion guardar
 
 
-//expresiones regulares ocupadas
-/*
-nombre completo: /^[A-Za-z]{3,}([\s][A-Za-z]{3,})+$/;
-DUI = /^\d{8}-\d{1}$/;
-Telefono:/^\d{4}-\d{4}$/;
-Correo:/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-*/
