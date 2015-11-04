@@ -20,7 +20,7 @@ function verificar () {
 
 function deslogearse () {
 	var sesion = localStorage.getItem("usuario");
-	//si la llave existe
+	//si hay un cliente logeado para salir
 	if (sesion != null){
 	document.getElementById("esconder").style.display="block";
 	document.getElementById("login").style.display="none";
@@ -28,8 +28,12 @@ function deslogearse () {
 	//borrando las claves de sessionStore
 	localStorage.removeItem("usuario");
 	localStorage.removeItem("contra");
+	//sacando la Url para ver en donde esta 
 	var URLactual = window.location.href;
-	alert(URLactual);
-	location.href="../index.html";
+	var re = /(\W|^)(content)(\W|$)/;
+	//si esta dentro de la carpeta de content 
+	if (re.test(URLactual)){
+		location.href="../index.html";//se direcionara hacia hacia main
+	}
 	}
 }
