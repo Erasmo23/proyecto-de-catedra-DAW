@@ -86,6 +86,10 @@ function  ocultar(x){
 }
 
 function selector_mesa(){
+
+	//comprobamos primero si hay logeado algun cliente
+	var sesion = localStorage.getItem("usuario");
+	if (sesion != null){
 	for (i=0; document.mesaslocal.mesa.length; i++){
 		if (document.mesaslocal.mesa[i].checked){
 			mesa=document.mesaslocal.mesa[i].value;
@@ -106,6 +110,13 @@ function selector_mesa(){
 		}
 		else {
 			console.log("Error: Guardando en el almacenamiento local.");
+		}
+	}
+	}else{
+		alert("Para poder realizar una reserva debe estar logeado en el sistema por favor");
+		var deseadirecionamiento = confirm('Desea dirigirse a la pagina de login/registración?');
+		if(deseadirecionamiento==true){
+			location.href="login.html";
 		}
 	}
 }
