@@ -19,10 +19,17 @@ function verificar () {
 }
 
 function deslogearse () {
+	var sesion = localStorage.getItem("usuario");
+	//si la llave existe
+	if (sesion != null){
 	document.getElementById("esconder").style.display="block";
 	document.getElementById("login").style.display="none";
 	document.getElementById("alogin").innerHTML= "";
 	//borrando las claves de sessionStore
 	localStorage.removeItem("usuario");
 	localStorage.removeItem("contra");
+	var URLactual = window.location.href;
+	alert(URLactual);
+	location.href="../index.html";
+	}
 }

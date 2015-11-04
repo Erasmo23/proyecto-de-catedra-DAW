@@ -429,6 +429,7 @@ legend.scheduler-border {
 }
 #login{display: none;}
 #Registrarse,#Logearse{margin-left: 45%;}
+#alogin{color: #FEDF1B;}
 
 /*linea del codigo que nos modifica el cuerpo de la pagina*/
 @media (max-width: 640px) {  
@@ -490,11 +491,19 @@ legend.scheduler-border {
 .navbar-brand{display: none;}
 nav{font-size: 11pt;}
 }
+@media screen and (max-width: 778px) and (min-width:776px){
+.navbar-brand{display: none;}
+nav{font-size: 10.5pt;}
+}
 @media screen and (max-width: 775px) and (min-width:767px){
 .navbar-brand{display: none;}
 nav{font-size: 10pt;}
 }
+@media screen and (max-width: 767px) and (min-width:520px){
+    #imgOcultar{display: none;}
+    #regi{margin-left: 32%;clear: both;}
 
+}
 
 
 
@@ -568,4 +577,8 @@ footer p{
 #mesap, #mesam, #mesag{display: none;}
 #peque, #media,#grande{display: block;}
 input[type=radio]{display: none;}
+#btn-reser{margin-left: 35%;}
+#Restart{margin-left: 175%;}
+#regi{margin-left: 32%;clear: both;}
+#imgOcultar{display: none;}
 }
