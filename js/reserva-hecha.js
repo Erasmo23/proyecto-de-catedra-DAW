@@ -22,6 +22,7 @@ function iniciar () {
 
 function ultimareservacion (){
 	var hor="";
+	Reserva.Horario= parseInt(Reserva.Horario);
 	switch(Reserva.Horario) {
     case 1:
         hor="11:00 am - 12:30 pm.";
@@ -53,7 +54,6 @@ function ultimareservacion (){
 		cadena+= "<tr><td>Fecha de Reserva:</td><td>" + Reserva.fecha +"</td></tr>";
 		cadena+= "<tr><td>Horario de reservacion:</td><td>"+ hor +"</td></tr></tbody></table>";
 		document.getElementById("tablaGenerar").innerHTML=cadena;
-		//document.getElementById("total").innerHTML= "Total de Reservas registradas al momento: "+ total + "."
 }
 
 function todasResservaciones () {
@@ -61,6 +61,7 @@ function todasResservaciones () {
 		cadena+= "<tr><td>#</td><td>Numero de Mesa</td><td>Fecha de Reservacion:</td><td>Horario:</td></tr>";
 		for (var i = 0; i < total; i++) {
 			var hor="";
+			Reservas[i].Horario= parseInt(Reservas[i].Horario);
 					switch(Reservas[i].Horario) {
 				    case 1:
 				        hor="11:00 am - 12:30 pm.";
