@@ -190,6 +190,7 @@ function Usuarios (nom,dui,phone,email,user,contra){
 			document.getElementById("esconder").style.display="none";
 			document.getElementById("login").style.display="block";
 			document.getElementById("alogin").innerHTML= a;
+			location.href="../index.html";
 }//fin de la funcion
 
 
@@ -228,6 +229,7 @@ function logearse () {
 			document.getElementById("alogin").innerHTML= user;
 			document.getElementById("usuario").value="";
 			document.getElementById("contralogin").value="";
+			location.href="../index.html";
 	}else{
 		alert("Los datos ingresados no coinciden");
 	}
