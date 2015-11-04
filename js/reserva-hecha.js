@@ -57,8 +57,8 @@ function ultimareservacion (){
 }
 
 function todasResservaciones () {
-	var cadena= "<table id= \"DatosTotales\"><thead><tr><th colspan=\"4\">Datos de todas las Reservaciones Realizada</th></tr></thead><tbody>";
-		cadena+= "<tr><td>#</td><td>Numero de Mesa</td><td>Fecha de Reservacion:</td><td>Horario:</td></tr>";
+	var cadena= "<table id= \"DatosTotales\"><thead><tr><th colspan=\"5\">Datos de todas las Reservaciones Realizada</th></tr></thead><tbody>";
+		cadena+= "<tr><td>#</td><td>Dui del cliente</td><td>Numero de Mesa</td><td>Fecha de Reservacion:</td><td>Horario:</td></tr>";
 		for (var i = 0; i < total; i++) {
 			var hor="";
 			Reservas[i].Horario= parseInt(Reservas[i].Horario);
@@ -82,7 +82,7 @@ function todasResservaciones () {
 				         hor="11:00 am - 12:30 pm.";
 				         break;
 					}
-					cadena+= "<tr><td>"+ (i+1) + "</td><td>"+Reservas[i].NumeroMesa +"</td><td>"+ Reservas[i].fecha+"</td><td>"+ hor+"</td></tr>";
+					cadena+= "<tr><td>"+ (i+1) + "</td><td>"+Reservas[i].Dui+"</td><td>"+Reservas[i].NumeroMesa +"</td><td>"+ Reservas[i].fecha+"</td><td>"+ hor+"</td></tr>";
 
 		};
 		cadena+= "</tbody></table>";

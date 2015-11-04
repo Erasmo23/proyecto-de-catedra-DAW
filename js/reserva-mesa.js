@@ -20,6 +20,10 @@ var Reservas= new Array();
 //vector donde se instanciaran los objectos de la clase cliente
 var reservacion = new Array();
 
+//capturaremos los datos de los usuarios registrados
+var totalRegistrados=0;
+var Registros= new Array();
+
 //creando el evento load de la ventana para prepara las imagenes y eventos que se crearan
 if(window.addEventListener){//navegadores recientes
 window.addEventListener("load", autoAjuste, false);
@@ -95,9 +99,23 @@ function autoAjuste(){
 	document.getElementById("Fecha").value=freserva;
 	document.getElementById("Fecha").min=freserva;
 	var annio = factual.getFullYear();
-	
+	//asignando placeholder en los campos
+	document.getElementById("regi").onclick= function(){conocer()};
 }
 function Restaurar(){
+	totalRegistrados= localStorage.getItem("TotalRegistrados");
+	if (totalRegistrados==null){
+		totalRegistrados=0;
+	}
+	Registros= localStorage.getItem("UserAll");
+	if (Registros == null){
+		Registros = new Array();
+		 console.log("aqui entra");
+	}else{
+		Registros= JSON.parse(Registros);
+		console.log(totalRegistrados);
+		console.log(Registros);
+	}
 	totalreserva= localStorage.getItem("Total");
 	if (totalreserva==null){
 		totalreserva=0;
@@ -159,9 +177,6 @@ function cliente (nom,dui,phone,email){
 		}
 	}//fin de funcion limpiar json
 
-
-
-
 	this.comprobar= function (){
 		//comprobaremos la disponibilidad de la mesa a reservar
 		var a = document.getElementById("NumeroMesa").value;
@@ -181,7 +196,20 @@ function cliente (nom,dui,phone,email){
 	}//fin de la funcion comprobar
 }//fin de la clase
 
-
+function conocer(){
+	var login=0;
+	var sesion = localStorage.getItem("usuario");
+	var contr = localStorage.getItem("contra");
+	for (var i = 0; i < totalRegistrados ; i++) {
+		if (sesion == Registros[i].Usuario && contr == Registros[i].Contrasena){
+			login=i;//esta variable sera el indice de donde sacaremos los datos que se guardaran
+		}
+	};
+	console.log(i);
+	//invocamos a la funcion donde instanciaremos un objecto de la clase de cliente
+	console.log(Registros[login].Nombre);
+	crear_Reserva(Registros[login].Nombre,Registros[login].Dui,Registros[login].Telefono,Registros[login].Email);
+}//fin de funcion
 
 
 function crear_Reserva (a,b,c,d){
@@ -219,5 +247,3 @@ function guardar() {
 		 else {console.log("Error: Guardando en el almacenamiento local.");}
  	}
 	}//fin de funcion guardar
-
-
