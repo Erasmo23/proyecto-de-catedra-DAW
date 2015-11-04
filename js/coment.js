@@ -114,7 +114,7 @@ function validar(){
 	texto=document.getElementById("coment").value;
 
 	var re=null;
-	re = /^[a-zA-Z\s]/;
+	re = /^[A-Za-z]{3,}([\s][A-Za-z]{3,})+$/;
  	if(re.test(nom)){
  		re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
  		if(re.test(email)){
