@@ -229,6 +229,8 @@ function crear_Reserva (a,b,c,d){
 		reservacion[totalreserva].registrar();
 		console.log("Se ha completado una reserva");
 		guardar();
+		alert("Se ha completado una reserva");
+		location.href="reserva-hecha.html";
 	}
 	
 }
