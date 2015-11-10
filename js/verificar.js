@@ -8,7 +8,6 @@ window.attachEvent("onload", verificar);
 //funcion que verificara si hay una persona logeada
 function verificar () {
 	document.getElementById("salir").onclick= function(){deslogearse()};
-
 	var sesion = localStorage.getItem("usuario");
 	//si la llave existe
 	if (sesion != null){
