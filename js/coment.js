@@ -65,7 +65,7 @@ function hacerComentario(){
 			}//Fin de comentario tipo queja
 			else if (tipo=="Sugerencia"){
 				comen+="\"info\"><td><div>"
-				comen+=nom + "<h5><small> Tipo: Queja - Email: " + email + "</small></h5><br>"
+				comen+=nom + "<h5><small> Tipo: Sugerencia - Email: " + email + "</small></h5><br>"
 				comen+=texto + "</div></td></tr>"
 			}//Fin de comentario tipo Sugerencia
 			limpiar();

@@ -65,11 +65,11 @@ footer p{
     height: 32px;
     width: 32px;
 }
-
+#borrar{margin-left: 40%;}
 /*modificacion para ordenadores y tablet sobre reserva de mesa*/
 #mesap, #mesam, #mesag{display: block;}
 #peque, #media,#grande{display: none;}
-
+#registros{margin-left: 500%;}
 
 
 /*Estilo para el submenu */
@@ -119,6 +119,7 @@ ul li{
 .entrada{
     width: 100%;
 }
+#btn,#resta{margin-left: 43%;}
 /*contenedor animado y con trasicion*/
 #slider-box {
     -moz-animation: autoSlider 15s infinite linear;
@@ -283,6 +284,7 @@ ul li{
 .cinco-imagenes img {
     width: 20%;
 }
+#resta{display: none;}
 /*contenedoror para movilizacion de imagenes*/
 .contenedor-img {
     position: relative;
@@ -430,7 +432,8 @@ legend.scheduler-border {
 #login{display: none;}
 #Registrarse,#Logearse{margin-left: 45%;}
 #alogin{color: #FEDF1B;}
-
+#registros{display: none;}
+#TablaTodas{display: inline-block;}
 /*linea del codigo que nos modifica el cuerpo de la pagina*/
 @media (max-width: 640px) {  
   .container {
@@ -581,4 +584,6 @@ input[type=radio]{display: none;}
 #Restart{margin-left: 175%;}
 #regi{margin-left: 32%;clear: both;}
 #imgOcultar{display: none;}
+#btn{margin-left: 25%;}
+#registros{margin-left: 150%;}
 }

@@ -7,7 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 	<meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<script type="text/javascript" src="../js/verificar.js"></script>
-	<script type="text/javascript" src="../js/reserva-hecha.js"></script>
 </head>
 <body>
 	<!--Modelo de plantilla a ocupar-->
@@ -57,16 +56,28 @@
 	</header><!--fin del menu-->
 	<!--Inicio del contenido de la pagina -->
 	<div class="container " id="cuerpo">
+	<form id="frm-buscar" name="buscar-reserva" class="form-horizontal">
+				<!--Formulario de busqueda de reserva-->
+				<div style="width:50%;margin:0 auto;">
+				<fieldset class="scheduler-border">
+					<legend class="scheduler-border">Buscar</legend>
+					<article class="form-group control-group"> 
+						<p class="text-right text-success diff">Ingrese numero de DUI para buscar:</p>
+						<input class="form-control" type="text" name="DuiBuscar" id="DuiBuscar" placeholder="ejemplo:12345678-9" value="">
+						<span class="error">*Dato erroneo</span><br>					
+					<input class="bottom btn btn-primary btn-lg" type="button" id="btn" value="Buscar">
+					<input class="bottom btn btn-primary btn-lg" type="button" id="resta" value="restaurar">
+				</fieldset>
+				</div>
+			</form>
 		<section class="row">
-			<h1 class="text-center text-primary">Datos Generales de las reservas:</h1>
+			<h1 class="text-center text-primary">Registros Generales de las reservas:</h1>
+			<div class="table-responsive">
 			<!--Articulo en donde crearemos una tabla con los datos de la reserva-->
-			<article id="tablaGenerar" class="col-xs-12  col-sm-12  col-md-12  col-lg-5">
-				<p id="total" class="text-center text-success"></p>
-			</article>
-			<article class="col-xs-12  col-sm-12  col-md-12  col-lg-7" id="TablaTodas">
-				
-			</article>
+			<article id="todo" class="col-xs-12  col-lg-12"></article>
+			</div>
 		</section>
+		<input class="bottom btn btn-danger btn-lg" type="button" id="borrar" value="borrar registros">
 	</div><br>
 	<!--footer de plantilla de todas las paginas-->
 	<footer class="container-fluid">
@@ -85,5 +96,6 @@
     <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
     <!--<script rc="http://code.jquery.com/jquery-latest.js"></script>-->
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/registros-mesas.js"></script>
 </body>
 </html>

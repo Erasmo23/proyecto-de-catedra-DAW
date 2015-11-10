@@ -213,6 +213,23 @@ function logearse () {
 	var user = document.getElementById("usuario").value;
 	var contr = document.getElementById("contralogin").value;
 	var contador=0;
+	//verificamos si es el usuario admin
+	if (user=="admin"){
+		var registro= localStorage.contraadmin
+		//si la contra esta bien 
+		if (contr==registro){
+			document.getElementById("esconder").style.display="none";
+			document.getElementById("login").style.display="block";
+			document.getElementById("alogin").innerHTML= user;
+			document.getElementById("usuario").value="";
+			document.getElementById("contralogin").value="";
+			location.href="../index.html";
+			localStorage.setItem("usuario",user);
+			localStorage.setItem("contra",contr);
+		}else{
+			alert("La contraseña del administrador no coincide");
+		}
+	}else{
 	//buscando datos recibidos con el vector guardado
 	for (var i = 0; i < totalRegistrados; i++) {
 		if ( user== Registros[i].Usuario && contr == Registros[i].Contrasena){
@@ -220,7 +237,7 @@ function logearse () {
 		}
 	};
 	if (contador==1){
-			//guardando los datos en SessionStore
+			//guardando los datos en localStorage
 			localStorage.setItem("usuario",user);
 			localStorage.setItem("contra",contr);
 			//ocultando el li de login y mostrando el correspondiente
@@ -232,6 +249,7 @@ function logearse () {
 			location.href="../index.html";
 	}else{
 		alert("Los datos ingresados no coinciden");
+	}
 	}
 }
 
