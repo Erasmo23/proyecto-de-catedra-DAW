@@ -15,4 +15,3 @@ $(document).ready(function(){
 			location.href="registros-mesas.html";//se direcionara hacia hacia main
 	});
 });
-

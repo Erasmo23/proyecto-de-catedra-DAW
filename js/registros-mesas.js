@@ -1,16 +1,15 @@
 var Reservas;
 var total;
-
+//carga de la pagina
 $(document).ready(function(){
 	mostrarTodo();
 });
-
 function mostrarTodo () {
-		//obtiendo los datos de localStorage
+	//obtiendo los datos de localStorage
 	total= localStorage.Total;
 	Reservas= localStorage.Reserva;
 	Reservas= JSON.parse(Reservas);
-
+	//cadena donde contendra la tabla
 	var creartabla= "<table id= \"DatosTotales\"  class=\"table table-bordered table-condensed \"><thead><tr><th colspan=\"9\">Datos de todas las Reservaciones Realizada</th></tr></thead><tbody>";
 		creartabla+= "<tr><td>#</td><td>Nombre</td><td>Dui del cliente</td><td>Telefono</td><td>Email</td><td>Numero de Mesa</td><td>Cantidad de comensales</td><td>Fecha de Reservacion:</td><td>Horario:</td></tr>";
 		for (var i = 0; i < total; i++) {
@@ -37,7 +36,6 @@ function mostrarTodo () {
 				         break;
 					}
 					creartabla+= "<tr><td>"+ (i+1) + "</td><td>"+Reservas[i].Nombre+"</td><td>"+Reservas[i].Dui+"</td><td>"+Reservas[i].Telefono+"</td><td>"+Reservas[i].Email+"</td><td>"+Reservas[i].NumeroMesa +"</td><td>"+Reservas[i].Cantidad+"</td><td>"+ Reservas[i].fecha+"</td><td>"+ hor+"</td></tr>";
-
 		};
 		creartabla+= "</tbody></table>";
 		$("#todo").html(creartabla);
@@ -55,7 +53,6 @@ $("#btn").click(function(){
 	var esta = false;
 	var re= /^\d{8}-\d{1}$/;
 	var errores =document.getElementsByClassName("error");
-
 	if (re.test(dui)){
 		errores[0].style.display="none";//ocultando el span correspondiente
 		for (var i = 0; i < total; i++) {
@@ -85,11 +82,9 @@ $("#btn").click(function(){
 					cadena+= "<tr><td>"+ (i+1) + "</td><td>"+Reservas[i].Nombre+"</td><td>"+Reservas[i].Dui+"</td><td>"+Reservas[i].Telefono+"</td><td>"+Reservas[i].Email+"</td><td>"+Reservas[i].NumeroMesa +"</td><td>"+Reservas[i].Cantidad+"</td><td>"+ Reservas[i].fecha+"</td><td>"+ hor+"</td></tr>";
 		esta=true;
 		};
-		
 	}
-
 	if (esta){
-			cadena+= "</tbody></table>";
+		cadena+= "</tbody></table>";
 		$("#todo").html(cadena);
 		$("#DuiBuscar").val("");
 		$("#resta").css("display","block");
@@ -97,7 +92,6 @@ $("#btn").click(function(){
 	}else{
 	alert("Reserva con numero de dui no encontrado");
 	}
-
 	}else{
 		errores[0].style.display="block";//mostrando el mensaje que esta en el span
 		errores[0].style.color="red";
