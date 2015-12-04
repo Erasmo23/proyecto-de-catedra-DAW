@@ -1,10 +1,7 @@
 //variables globales
-//total de reservas que se han realizado
-var totalreserva=0;
-//mesa que se seleciono
-var mesa;
-//json que se ocupara para guardar datos
-var Reserva ={
+var totalreserva=0;//total de reservas que se han realizado
+var mesa;//mesa que se seleciono
+var Reserva ={//json que se ocupara para guardar datos
 	"Nombre": "",
 	"Dui": "",
 	"Telefono" :"",
@@ -15,12 +12,9 @@ var Reserva ={
 	"fecha" :"",
 	"Horario" :"",
 }
-//vector donde se guardaran los json
-var Reservas= new Array();
-//vector donde se instanciaran los objectos de la clase cliente
-var reservacion = new Array();
-
-//capturaremos los datos de los usuarios registrados
+var Reservas= new Array();//vector donde se guardaran los json
+var reservacion = new Array();//vector donde se instanciaran los objectos de la clase Cliente
+//varianbles donde capturaremos los datos de los usuarios registrados en localstorage
 var totalRegistrados=0;
 var Registros= new Array();
 
@@ -32,13 +26,7 @@ window.attachEvent("onload", autoAjuste);
 }
 
 function autoAjuste(){
-	if(typeof(Storage) == "undefined") {
- 	alert("El navegador no tiene soporte para HTML5 y almacenamiento local. Se recomienda actualizarlo.");
- 	}
- 	else {
- 	console.log("El navegador soporta tanto localStorage como sessionStorage.");
  	Restaurar();
- 	}
 	mesa = localStorage.getItem("mesaTemp");
 	//asignacion a texbox de tipo de mesa elegida
 	if(mesa==1 || mesa==2 || mesa==3 || mesa==4 || mesa==5){
@@ -53,21 +41,8 @@ function autoAjuste(){
 	else{
 		document.getElementById("TipoMesa").value="Undefined"	
 	}
-	
 	//Asignacion automatica del numero de mesa escogida
-	if(mesa==1 || mesa==2 || mesa==3 || mesa==4 || mesa==5){
-		document.getElementById("NumeroMesa").value= mesa;
-	}
-	else if (mesa==6 || mesa==7 || mesa==8 || mesa==9 || mesa==10){
-		document.getElementById("NumeroMesa").value= mesa;
-	}
-	else if (mesa==11 || mesa==12 || mesa==13 || mesa==14 || mesa==15){
-		document.getElementById("NumeroMesa").value= mesa;
-	}
-	else{
-		document.getElementById("NumeroMesa").value="Undefined"	
-	}
-
+	document.getElementById("NumeroMesa").value= mesa;
 	//Asignacion automatica del numero de personas en la mesa
 	if(mesa==1 || mesa==2 || mesa==3 || mesa==4 || mesa==5){
 		document.getElementById("Cantidad-Visitantes").max="4";
@@ -79,7 +54,7 @@ function autoAjuste(){
 		document.getElementById("Cantidad-Visitantes").max="10";	
 	}
 	else{
-		document.getElementById("Cantidad-Visitantes").max=0;
+		document.getElementById("Cantidad-Visitantes").max="10";
 	}
 	document.getElementById("Cantidad-Visitantes").value=1;
 	//Obtener fecha, asignarla y posponer una semana despues la reserva
@@ -99,7 +74,6 @@ function autoAjuste(){
 	document.getElementById("Fecha").value=freserva;
 	document.getElementById("Fecha").min=freserva;
 	var annio = factual.getFullYear();
-	//asignando placeholder en los campos
 	document.getElementById("regi").onclick= function(){conocer()};
 }
 function Restaurar(){
@@ -110,11 +84,8 @@ function Restaurar(){
 	Registros= localStorage.getItem("UserAll");
 	if (Registros == null){
 		Registros = new Array();
-		 console.log("aqui entra");
 	}else{
 		Registros= JSON.parse(Registros);
-		console.log(totalRegistrados);
-		console.log(Registros);
 	}
 	totalreserva= localStorage.getItem("Total");
 	if (totalreserva==null){
@@ -125,21 +96,20 @@ function Restaurar(){
 		Reservas = new Array();
 	}else{
 		Reservas= JSON.parse(Reservas);
-		console.log(totalreserva);
-		console.log(Reservas);
 	}
 }
 
-//clase que contendra los datos de cliente de reserva
-function cliente (nom,dui,phone,email){
-	//propiedades de la clase
+//constructor de la clase que contendra los datos de Cliente de reserva
+function Cliente (nom,dui,phone,email){
+	//propiedades publicas de la clase
 	this.NombreCompleto =nom;
 	this.DUI=dui;
 	this.Telefono=phone;
 	this.Correo = email;
-	//metodos de la clase
-	//registraremos una reservacion
-	this.registrar = function (){
+}//fin del constructor de la clase
+
+//metodos publicos de la clase
+Cliente.prototype.registrar = function (){
 		//asignando cada uno del campos al json
 		Reserva.Nombre= this.NombreCompleto;
 		Reserva.Dui= this.DUI;
@@ -160,10 +130,9 @@ function cliente (nom,dui,phone,email){
 		totalreserva++;
 		//llamaremos a la funcion limpiarjson
 		this.limpiarJson();
-	}//fin de funcion de registrar
-	
+}//fin del metodo de registrar
 
-	this.limpiarJson= function (){
+Cliente.prototype.limpiarJson= function (){
 	Reserva ={
 		"Nombre": "",
 		"Dui": "",
@@ -175,9 +144,9 @@ function cliente (nom,dui,phone,email){
 		"fecha" :"",
 		"Horario" :"",
 		}
-	}//fin de funcion limpiar json
+}//fin del metodo limpiar json
 
-	this.comprobar= function (){
+Cliente.prototype.comprobar= function (){
 		//comprobaremos la disponibilidad de la mesa a reservar
 		var a = document.getElementById("NumeroMesa").value;
 		var b = document.getElementById("Fecha").value;
@@ -193,8 +162,7 @@ function cliente (nom,dui,phone,email){
 		}else{
 			return true;
 		}
-	}//fin de la funcion comprobar
-}//fin de la clase
+}//fin del metodo comprobar
 
 function conocer(){
 	var login=0;
@@ -205,37 +173,29 @@ function conocer(){
 			login=i;//esta variable sera el indice de donde sacaremos los datos que se guardaran
 		}
 	};
-	console.log(i);
-	//invocamos a la funcion donde instanciaremos un objecto de la clase de cliente
-	console.log(Registros[login].Nombre);
+	//invocamos a la funcion donde instanciaremos un objecto de la clase de Cliente
 	crear_Reserva(Registros[login].Nombre,Registros[login].Dui,Registros[login].Telefono,Registros[login].Email);
 }//fin de funcion
 
-
 function crear_Reserva (a,b,c,d){
 	//instanciando un objecto de la clase consulta
-	reservacion[totalreserva] = new cliente(a,b,c,d);//los parametros son los datos personales del formulario
+	reservacion[totalreserva] = new Cliente(a,b,c,d);//los parametros son los datos personales del formulario
 	if (totalreserva>0){
 		if (reservacion[totalreserva].comprobar()){
 				reservacion[totalreserva].registrar();
 				guardar();
-				console.log("Se ha completado una reserva");
-				alert("Se ha completado una reserva");
-				location.href="reserva-hecha.html";
+				swal("Reserva completada!", "tu reserva se ha completado exitosamente", "success");
+				setTimeout("location.href='reserva-hecha.html';",2200);//generando pausa para el redirecionamiento
 		}else {
-			alert("La disponibilidad de esa mesa ya esta Reserva en el horario y la fecha solicitad");
+			swal("No se puedo realizar la reserva", "La disponibilidad de esa mesa ya esta Reserva en el horario y la fecha solicitad", "error");
 		}
 	}else{
 		reservacion[totalreserva].registrar();
-		console.log("Se ha completado una reserva");
 		guardar();
-		alert("Se ha completado una reserva");
-		location.href="reserva-hecha.html";
-	}
-	
+		swal("Reserva completada!", "tu reserva se ha completado exitosamente", "success");
+		setTimeout("location.href='reserva-hecha.html';",2200);//generando pausa para el redirecionamiento
+	}	
 }
-
-
 function guardar() {
 		 try {
 		 	Reservas=JSON.stringify(Reservas);//pasando a cadena todo los json contenidos en el vector
@@ -248,4 +208,4 @@ function guardar() {
 		 if (e >= QUOTA_EXCEEDED_ERR) {console.log("Error: Límite para almacenamiento local se ha alcanzado.");}
 		 else {console.log("Error: Guardando en el almacenamiento local.");}
  	}
-	}//fin de funcion guardar
+}//fin de funcion guardar

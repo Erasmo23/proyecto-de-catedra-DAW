@@ -1,8 +1,6 @@
 //variables globales
-//total de registros en el vector
-var totalRegistrados=0;
-//json que se ocupara para guardar datos
-var Registro ={
+var totalRegistrados=0;//total de registros en el vector
+var Registro ={//json(object) que se ocupara para guardar datos
 	"Nombre": "",
 	"Dui": "",
 	"Telefono" :"",
@@ -10,10 +8,8 @@ var Registro ={
 	"Usuario" :"",
 	"Contrasena": "",
 }
-//vector donde se guardaran todos los usuarios registrados
-var Registros= new Array();
-//vector donde se instanciaran todos lo nuevos usuarios
-var usuarios= new Array();
+var Registros= new Array();//vector donde se guardaran todos los usuarios registrados
+var usuarios= new Array();//vector donde se instanciaran todos lo nuevos usuarios
 
 //creando el evento load de la ventana para prepara las imagenes y eventos que se crearan
 if(window.addEventListener){//navegadores recientes
@@ -22,17 +18,8 @@ window.addEventListener("load", iniciar, false);
 window.attachEvent("onload", iniciar);
 }
 
-
 function iniciar () {
-	if(typeof(Storage) == "undefined") {
- 	alert("El navegador no tiene soporte para HTML5 y almacenamiento local. Se recomienda actualizarlo.");
- 	}
- 	else {
- 	console.log("El navegador soporta tanto localStorage como sessionStorage.");
- 	Restaurar();
- 	}
-
-
+ 	Restaurar();//restaurando los datos en cada una de las variables globales
 	//asignando placeholder en los campos
 	document.getElementById("NomComplet").placeholder="nombres apellidos";
 	document.getElementById("Dui").placeholder="formato 12345678-9";
@@ -41,9 +28,7 @@ function iniciar () {
 	document.getElementById("Registrarse").onclick= function(){validar()};
 	document.getElementById("Logearse").onclick= function(){logearse()};
 }
-
-
-
+//funcion donde obtenemos los valores del localstorage
 function Restaurar(){
 	totalRegistrados= localStorage.getItem("TotalRegistrados");
 	if (totalRegistrados==null){
@@ -54,76 +39,101 @@ function Restaurar(){
 		Registros = new Array();
 	}else{
 		Registros= JSON.parse(Registros);
-		console.log(totalRegistrados);
-		console.log(Registros);
 	}
 }
-
-
-
+//funcion para validar datos del formulario
 function validar(){
-	var NC=document.getElementById("NomComplet").value;
-	var D =document.getElementById("Dui").value;
-	var NT=document.getElementById("NumeroTelefono").value;
-	var C=document.getElementById("Correo").value;
-	var usuari = document.getElementById("user").value;
-	var contra = document.getElementById("contra").value;
-	var errores =document.getElementsByClassName("error");
-	var re = null;
-	//validando el nombre
-	re= /^[A-Za-z]{3,}([\s][A-Za-z]{3,})+$/;
-	if (re.test(NC)){
-		errores[0].style.display="none";//ocultando el span correspondiente
-		re= /^\d{8}-\d{1}$/;
-		if (re.test(D)){
-			errores[1].style.display="none";//ocultando el span correspondiente
-			re=/^\d{4}-\d{4}$/;
-			if (re.test(NT)){
-					errores[2].style.display="none";//ocultando el span correspondiente
-					re=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-					if (re.test(C)){
-							errores[3].style.display="none";//ocultando el span correspondiente
-							re= /^[A-Za-z0-9]{4,15}$/;
-							if (re.test(usuari)){
-								errores[4].style.display="none";//ocultando el span correspondiente
-								//invocamos a la funcion donde instanciaremos un objecto de la clase de cliente
-								registracion(NC,D,NT,C,usuari,contra);
+	//obteniendo todos los input del formulario
+	var NC=document.getElementById("NomComplet");
+	var D =document.getElementById("Dui");
+	var NT=document.getElementById("NumeroTelefono");
+	var C=document.getElementById("Correo");
+	var usuari = document.getElementById("user");
+	var contra = document.getElementById("contra");
+	var contra2 = document.getElementById("contra2");
+	var errores =document.getElementsByClassName("error");//obteniendo todos los span
+	var re = null;//expresion regular
+	re= /^[A-Za-z]{3,}([\s][A-Za-z]{3,})+$/;//validando el nombre
+	if (re.test(NC.value)){
+		errores[0].style.display="none";
+		re= /^\d{8}-\d{1}$/;//validando el dui
+		if (re.test(D.value)){
+			errores[1].style.display="none";
+			re=/^\d{4}-\d{4}$/;//validando el telefono
+			if (re.test(NT.value)){
+					errores[2].style.display="none";
+					re=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;//validando el correo
+					if (re.test(C.value)){
+							errores[3].style.display="none";
+							re= /^[A-Za-z0-9]{4,15}$/;//validando el usuario
+							if (re.test(usuari.value)){
+								errores[4].style.display="none";
+								if (contra.value !== ""){//verificando si esta vacio el campo de contra
+									errores[5].style.display="none";
+									if(contra2.value !== ""){
+										errores[6].style.display="none";
+										if (contra.value == contra2.value){
+											errores[7].style.display="none";
+											//invocamos a la funcion donde instanciaremos un objecto de la clase de cliente
+											registracion(NC.value,D.value,NT.value,C.value,usuari.value,contra.value);
+										}else{
+											errores[7].style.display="block";//mostrando el mensaje que esta en el span
+											errores[7].style.color="red";
+											contra2.focus();
+										}
+									}else{
+										errores[6].style.display="block";//mostrando el mensaje que esta en el span
+										errores[6].style.color="red";
+										contra2.focus();
+									}
+								}else{
+									errores[5].style.display="block";//mostrando el mensaje que esta en el span
+									errores[5].style.color="red";
+									contra.focus();
+								}	
 							}else{
 								errores[4].style.display="block";//mostrando el mensaje que esta en el span
 								errores[4].style.color="red";
-								alert("Solo se acepta minusculas-mayusculas y digitos con un minimo de 4 y maximo de 15 caracteres");
+								usuari.focus();
 							}
 					}else{
 						errores[3].style.display="block";//mostrando el mensaje que esta en el span
 						errores[3].style.color="red";
+						C.focus();
 					}//fin de la validacion de correo
 			}else{
 				errores[2].style.display="block";//mostrando el mensaje que esta en el span
 				errores[2].style.color="red";
+				NT.focus();
 			}//fin de la validacion del numero de telefono
 		}else{
 			errores[1].style.display="block";//mostrando el mensaje que esta en el span
 			errores[1].style.color="red";
+			D.focus();
 		}//fin de validacion de DUI
 	}else{
 		errores[0].style.display="block";//mostrando el mensaje que esta en el span
 		errores[0].style.color="red";
+		NC.focus();
 	}//fin de validacion de nombre
 }//fin de funcion
 
 
 //clase que contendra los datos de usuario registrado
-function Usuarios (nom,dui,phone,email,user,contra){
-	//propiedades de la clase
+//constructor del objecto
+function Usuarios(nom,dui,phone,email,user,contra){
+	//propiedades publicas de la clase
 	this.NombreCompleto =nom;
 	this.DUI=dui;
 	this.Telefono=phone;
 	this.Correo = email;
 	this.usuario= user;
 	this.contrasena = contra;
-	//metodos de la clase
-	//registraremos una reservacion
-	this.registrar = function (){
+}//fin de la clase
+
+//metodos publicos de la clase
+//metodo para registrar un usuario nuevo
+Usuarios.prototype.registrar = function (){
 		//asignando cada uno del campos al json
 		Registro.Nombre= this.NombreCompleto;
 		Registro.Dui= this.DUI;
@@ -137,10 +147,11 @@ function Usuarios (nom,dui,phone,email,user,contra){
 		totalRegistrados++;
 		//llamaremos a la funcion limpiarjson
 		this.limpiarJson();
-	}//fin de funcion de registrar
-	
-	//funcion para limpiar el Json y evitar convenientes luego
-	this.limpiarJson= function (){
+}//fin del metodo de registrar
+
+
+//metodo para limpiar el Json y evitar convenientes luego
+Usuarios.prototype.limpiarJson= function (){
 			Registro ={
 			"Nombre": "",
 			"Dui": "",
@@ -149,27 +160,23 @@ function Usuarios (nom,dui,phone,email,user,contra){
 			"Usuario" :"",
 			"Contrasena": "",
 			}
-	};//fin de funcion limpiar json
+};//fin de funcion limpiar json
 
-	//funcion que comprobara que no haya dos usuarios igual
-	this.comprobar= function (){
-		//comprobaremos la disponibilidad de la mesa a reservar
-		var a = document.getElementById("user").value; 
-		var ya = false;
+//metodo que comprobara que no haya dos usuarios igual
+Usuarios.prototype.comprobar= function (){
+		var a = document.getElementById("user").value;//usuario que se esta ingresando 
+		var ya = false;//valor booleano
 		for (var i = 0; i < totalRegistrados; i++) {
 			if ( a == Registros[i].Usuario){
-				ya=true;
+				ya=true;//si ya existe cambia su valor
 			}	
 		};
-		if (ya){
+		if (ya){//retornara si ya esta registrado o no
 			return false;
 		}else{
 			return true;
 		}
-	}//fin de la funcion comprobar
-
-}//fin de la clase
-
+}//fin de la funcion comprobar
 
  function limpiar (){
 		document.getElementById("NomComplet").value="";
@@ -183,17 +190,17 @@ function Usuarios (nom,dui,phone,email,user,contra){
  function LogearAutomaticamente(){
  			var a = document.getElementById("user").value;
  			var b = document.getElementById("contra").value;
-			//guardando los datos en SessionStore
+			//guardando los datos en localstorage
 			localStorage.setItem("usuario",a);
 			localStorage.setItem("contra",b);
 			//ocultando el li de login y mostrando el correspondiente
 			document.getElementById("esconder").style.display="none";
 			document.getElementById("login").style.display="block";
 			document.getElementById("alogin").innerHTML= a;
-			location.href="../index.html";
+			//generando efecto de loguearse
+			swal({title: "Su registración ha sido exitosa",timer: 2000,showConfirmButton: false});
+			setTimeout("location.href='../index.html';",2200);//generando pausa para el redirecionamiento
 }//fin de la funcion
-
-
 
 function guardar() {
 		 try {
@@ -223,20 +230,18 @@ function logearse () {
 			document.getElementById("alogin").innerHTML= user;
 			document.getElementById("usuario").value="";
 			document.getElementById("contralogin").value="";
-			location.href="../index.html";
+			swal({   title: "Hola administrador!!!!!!",   text: "Se ha iniciado seccion como administrador",   timer: 2000,   showConfirmButton: false });
+			setTimeout("location.href='../index.html';",2200);//generando pausa para el redirecionamiento
 			localStorage.setItem("usuario",user);
 			localStorage.setItem("contra",contr);
 		}else{
-			alert("La contraseña del administrador no coincide");
-		}
-	}else{
-	//buscando datos recibidos con el vector guardado
-	for (var i = 0; i < totalRegistrados; i++) {
+			sweetAlert("Error al loguearse como administrador...", "La contraseña del administrador no coincide", "error");}
+	}else{//sino es el usuario
+	for (var i = 0; i < totalRegistrados; i++) {//buscando datos recibidos con el vector guardado
 		if ( user== Registros[i].Usuario && contr == Registros[i].Contrasena){
-			contador++;
-		}
-	};
-	if (contador==1){
+			contador++;//si encuentra coincidencia el contador sumara
+		}};
+	if (contador==1){//si encontro
 			//guardando los datos en localStorage
 			localStorage.setItem("usuario",user);
 			localStorage.setItem("contra",contr);
@@ -246,40 +251,28 @@ function logearse () {
 			document.getElementById("alogin").innerHTML= user;
 			document.getElementById("usuario").value="";
 			document.getElementById("contralogin").value="";
-			location.href="../index.html";
-	}else{
-		alert("Los datos ingresados no coinciden");
-	}
-	}
-}
+			//generando efecto de loguearse
+			swal({   title: "Longueandose...!",   text: "Se ha iniciado seccion con : " + user+".",   timer: 2000,   showConfirmButton: false });
+			setTimeout("location.href='../index.html';",2200);//generando pausa para el redirecionamiento
+	}else{sweetAlert("Error al intentar loguearse...", "Contraseña erronea del usuario", "error");}}
+}//fin de la funcion
 
 function registracion (a,b,c,d,e,f) {
 	//instanciando un objecto de la clase Usuarios
 	usuarios[totalRegistrados]= new Usuarios(a,b,c,d,e,f);//los parametros son los datos personales del formulario
 	if (totalRegistrados>0){
 		if (usuarios[totalRegistrados].comprobar()){
+			console.log(usuarios[totalRegistrados]);
 				usuarios[totalRegistrados].registrar();
-				LogearAutomaticamente();
 				limpiar();
 				guardar();
-				alert("Su registracion ha sido exitosa");
+				LogearAutomaticamente();
 		}else {
-			alert("El usuario selecionda ya esta registrado por favor selecionar otro");
+			alert("El usuario seleciond@ ya esta registrado por favor selecionar otro");
 		}
 	}else{
 		usuarios[totalRegistrados].registrar();
-		LogearAutomaticamente();
 		limpiar();		
 		guardar();
-		alert("Su registracion ha sido exitosa");
-	}
+		LogearAutomaticamente();}
 }//fin de la funcion registrar
-
-//expresiones regulares ocupadas
-/*
-nombre completo: /^[A-Za-z]{3,}([\s][A-Za-z]{3,})+$/;
-DUI = /^\d{8}-\d{1}$/;
-Telefono:/^\d{4}-\d{4}$/;
-Correo:/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-usuario: /^[A-Za-z]{4,}+$/;
-*/

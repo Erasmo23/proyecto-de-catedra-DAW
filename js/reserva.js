@@ -27,34 +27,25 @@ function iniciar () {
 	}catch (e){
 		console.log(e);
 	}
-	//verificando el uso de localstore
-	if(typeof(Storage) == "undefined") {
-		alert("El navegador no tiene soporte para HTML5 y almacenamiento local. Se recomienda actualizarlo. Por lo tanto la pagina no funcionara correctamente");
-	}
 }
 
 function ponerckequeado (cual){
 	var radios= mesaslocal.elements['mesa'];//obteniendo todos los radios button de las mesas
 	radios[cual].checked=true;//colocando el checked en la imagen selecionada aunque este oculto
 	var imagenes = document.getElementsByClassName("obtener");//obteniendo todas las imagenes de las mesas
-	//quitando el border de todas las imagenes
 	for (var i = 0; i < imagenes.length; i++) {
-		imagenes[i].style.border="none";
+		imagenes[i].style.border="none";//quitando el border de todas las imagenes
 	};
-	//colando el estilo de border de la imagen selecionada
-	imagenes[cual].style.border="thick double #FF6C00";
+	imagenes[cual].style.border="thick double #FF6C00";//colando el estilo de border de la imagen selecionada
 }
 function ponerborder(saber){
 	var radios= mesaslocal.elements['mesa'];//obteniendo todos los radios button de las mesas
 	radios[saber].checked=true;//colocando el checked en la imagen selecionada aunque este oculto
 	var imagenes = document.getElementsByClassName("obtener");//obteniendo todas las imagenes de las mesas
-	//quitando el border de todas las imagenes
-	for (var i = 0; i < imagenes.length; i++) {
+	for (var i = 0; i < imagenes.length; i++) {//quitando el border de todas las imagenes
 		imagenes[i].style.border="none";
 	};
-	//colando el estilo de border de la imagen selecionada
-	imagenes[saber].style.border="thick double #FF6C00";
-
+	imagenes[saber].style.border="thick double #FF6C00";//colando el estilo de border de la imagen selecionada
 }
 //para mostrar el contenido del articulo
 function mostrar(x){
@@ -86,9 +77,7 @@ function  ocultar(x){
 }
 
 function selector_mesa(){
-
-	//comprobamos primero si hay logeado algun cliente
-	var sesion = localStorage.getItem("usuario");
+	var sesion = localStorage.getItem("usuario");//comprobamos primero si hay logeado algun cliente
 	if (sesion != null){
 	for (i=0; document.mesaslocal.mesa.length; i++){
 		if (document.mesaslocal.mesa[i].checked){
@@ -96,37 +85,48 @@ function selector_mesa(){
 			break;
 		}
 	}
-	//guardado de numero de mesa en el LocalStogare
-	try {
+	try {//guardado de numero de mesa en el LocalStogare
 		localStorage.setItem("mesaTemp", mesa);
-		msg = "numero de mesa guardados en el localStorage.";
-		console.log(msg);
 		location.href="reservar-mesa.html";
 	}
 	catch (e) {
 		//Verificar si el límite de almacenamiento no se ha sobrepasado
 		if (e >= QUOTA_EXCEEDED_ERR) {
 			console.log("Error: Límite para almacenamiento local se ha alcanzado.");
-		}
-		else {
+		}else {
 			console.log("Error: Guardando en el almacenamiento local.");
 		}
 	}
 	}else{
-		alert("Para poder realizar una reserva debe estar logeado en el sistema por favor");
-		var deseadirecionamiento = confirm('Desea dirigirse a la pagina de login/registración?');
-		if(deseadirecionamiento==true){
-			location.href="login.html";
-		}
+		swal({type: "warning",title: "Se requiere que se este registrado en el sistema",   text: "Para poder realizar una reserva debe estar logeado en el sistema por favor",   timer: 2000,   showConfirmButton: false });
+		setTimeout("deseadirecionamiento()",2200);
 	}
+}
+function deseadirecionamiento (){
+	swal({
+  title: "Desea direccionamiento??",
+  text: "Desea dirigirse a la página de login/registración",
+  type: "info",
+  showCancelButton: true,
+  confirmButtonClass: "btn-danger",
+  confirmButtonText: "Si, por favor!",
+  cancelButtonText: "No, gracias!",
+  closeOnConfirm: false,
+  closeOnCancel: false
+},
+function(isConfirm) {
+  if (isConfirm) {
+    location.href="login.html";
+  } else {
+    swal("Cancelado", "Para dirigirse a la parte de registración/login se encuentra en la parte superior derecha del menu", "error");
+  }
+});
 }
 
 function restaurar () {
 	var imagenes = document.getElementsByClassName("obtener");//obteniendo todas las imagenes de las mesas
-	//quitando el border de todas las imagenes
 	for (var i = 0; i < imagenes.length; i++) {
-		imagenes[i].style.border="none";
+		imagenes[i].style.border="none";//quitando el border de todas las imagenes
 	};
-	//colando el estilo de border de la imagen selecionada
-	imagenes[0].style.border="thick double #FF6C00";
+	imagenes[0].style.border="thick double #FF6C00";//colando el estilo de border de la imagen selecionada
 }

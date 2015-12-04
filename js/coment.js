@@ -140,5 +140,4 @@ function validar(){
  		alert("Nombre ingresado invalido");	
  		document.getElementById("nom").focus();
  	}
- 	
 }
