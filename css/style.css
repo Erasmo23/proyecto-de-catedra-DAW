@@ -69,7 +69,7 @@ footer p{
 /*modificacion para ordenadores y tablet sobre reserva de mesa*/
 #mesap, #mesam, #mesag{display: block;}
 #peque, #media,#grande{display: none;}
-#registros{margin-left: 500%;}
+#registros{margin-left: 75%;}
 
 
 /*Estilo para el submenu */
@@ -484,6 +484,7 @@ legend.scheduler-border {
     #contactos table{width: 80%;}
     #mesap, #mesam, #mesag{display: none;}
     #peque, #media,#grande{display: block;}
+    #registros{margin-left: 125px;}
 }
 
 @media screen and (max-width: 967px) and (min-width:833px){
@@ -505,6 +506,7 @@ nav{font-size: 10pt;}
 @media screen and (max-width: 767px) and (min-width:520px){
     #imgOcultar{display: none;}
     #regi{margin-left: 32%;clear: both;}
+    #registros{margin-left: 50px;}
 
 }
 
@@ -580,10 +582,9 @@ footer p{
 #mesap, #mesam, #mesag{display: none;}
 #peque, #media,#grande{display: block;}
 input[type=radio]{display: none;}
-#btn-reser{margin-left: 35%;}
-#Restart{margin-left: 175%;}
+#btn-reser,#Restart{margin: 5px auto;margin-left: 130px;}
 #regi{margin-left: 32%;clear: both;}
 #imgOcultar{display: none;}
 #btn{margin-left: 25%;}
-#registros{margin-left: 150%;}
+#registros{margin-left: 80px;}
 }
