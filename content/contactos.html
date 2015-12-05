@@ -2,12 +2,20 @@
 <html lang="es">
 <head>
 	<title>Contactos</title>
-	<meta charset="UTF-8"/>
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 	<meta charset="utf-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!--estilos de bootrap-->
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<!--Script que son usados para obtener las funcionalidad que nos ofrece Boostrap-->
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<!--Estilo para corregir errores-->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<!--Script que nos dan la funcionalidad-->	
 	<script type="text/javascript" src="../js/verificar.js"></script>
+	<!--mensajes personalizados-->
+	<link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+	<script type="text/javascript" src="../js/sweetalert.min.js"></script>
 </head>
 <body>
 	<!--Modelo de plantilla a ocupar-->
@@ -66,17 +74,19 @@
                     	<div class="form-group "> <!--grupo de nombre completo y su label-->
                         <tr>
                             <td colspan="2">Nombre completo:<br>
-                            <input id="nom" class="form-control" name="nombre" type="text" size="20" maxlenght="80" required pattern="^[a-zA-Z\s]+$" required title="Por favor ingrese sus nombres completo" placeholder="Nombre y Apellido">                           
+                            <input id="nom" class="form-control" name="nombre" type="text" size="20" maxlenght="80" required pattern="^[a-zA-Z\s]+$" required title="Por favor ingrese sus nombres completo" placeholder="Nombre y Apellido">   
+                            <span class="error">*Dato erroneo: recordar como minimo nombre y apellido</span></td>                       
                         </tr>
                         </div>
                         <div class="form-group"><!--grupo de Correo Electronico-->
                         <tr>
-                            <td colspan="2">Correo Electronico: <br><input id="mail" class="form-control" type="email" name="email" required title=" Formato de correo:preferencia@servidor.com" placeholder="ejemplo@dominio.com"/></td>                          
+                            <td colspan="2">Correo Electronico: <br><input id="mail" class="form-control" type="email" name="email" required title=" Formato de correo:preferencia@servidor.com" placeholder="ejemplo@dominio.com"/><span class="error">*Dato erroneo</span> </td>                      
                         </tr>
                         </div>
                         <div class="form-group"><!--grupo de motivo del contacto-->
                         <tr>
                             <td colspan="2">Motivo de contacto: <br><input  id="tipo" class="form-control" type="text" list="motivo" required title="Deseamos conocer tu opinion">
+                            <span class="error">*Dato erroneo: opciones validad:Felicitacion,Queja,Sugerencia </span>
                     		<datalist id="motivo">
                         		<option value="Felicitacion">Felicitacion</option>
 		                        <option value="Queja">Queja</option>
@@ -87,14 +97,14 @@
                         </div>
                         <div class="form-group"><!--grupo de comentario personal-->
                         <tr>
-                            <td colspan="2">Comentario: <br><textarea class="form-control" id="coment" name="comentario" cols="40" rows="6" required title="deseamos conocer tu opinion"></textarea></td>                          
+                            <td colspan="2">Comentario: <br><textarea class="form-control" id="coment" name="comentario" cols="40" rows="6" required title="deseamos conocer tu opinion"></textarea> <span class="error">*No puede dejar vacio este campo.</span></td>                        
                         </tr>
                         </div>
                         
                         <div class="form-group"><!--grupo de botones-->
                         <tr>
                             <td><input type="button" value="Comentar" id="btn-coment" class="form-control"></td>
-                            <td><input type="reset" value="Limpiar" class="form-control">  </td>
+                            <td><input type="reset" value="Limpiar" class="form-control" id="limpiar"></td>
                         </tr>
                         </div>
                     </table>
@@ -116,10 +126,6 @@
             </tr>
         </table>
     </footer>
-    <!--Script que son usados para obtener las funcionalidad que nos ofrece Boostrap-->
-    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
-    <!--<script rc="http://code.jquery.com/jquery-latest.js"></script>-->
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script src="../js/coment.js"></script>
 </body>
 </html>
